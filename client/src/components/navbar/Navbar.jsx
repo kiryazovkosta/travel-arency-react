@@ -24,6 +24,7 @@ function Navbar() {
                                 <Link to="/booking" className="dropdown-item">Booking</Link>
                                 <Link to="/team" className="dropdown-item">Travel Guides</Link>
                                 <Link to="/404" className="dropdown-item">404 Page</Link>
+                                <Link to="/packages/create" className="dropdown-item">Create package</Link>
                             </div>
                         </div>
                         <Link to="/contact" className="nav-item nav-link">Contact</Link>

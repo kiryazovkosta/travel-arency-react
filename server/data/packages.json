@@ -1,0 +1,32 @@
+{
+    "7cd1d676-24d7-4d26-9693-b529e8829ae8": {
+        "title": "Thailand",
+        "duration": "3 days",
+        "persons": "2",
+        "price": 149.00,
+        "imageUrl": "img/package-1.jpg",
+        "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+        "data-wow-delay": "0.1s",
+        "_id": "7cd1d676-24d7-4d26-9693-b529e8829ae8"
+    },
+    "be731f72-1338-48f4-98c3-c0e0ff4c2a58": {
+        "title": "Indonesia",
+        "duration": "5 days",
+        "persons": "3",
+        "price": 320.00,
+        "imageUrl": "img/package-2.jpg",
+        "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+        "data-wow-delay": "0.3s",
+        "_id": "be731f72-1338-48f4-98c3-c0e0ff4c2a58"
+    },
+    "d7cde56d-61ad-4c4a-9298-c684a287e0c8": {
+        "title": "Malaysia",
+        "duration": "2 days",
+        "persons": "2",
+        "price": 212.00,
+        "imageUrl": "img/package-3.jpg",
+        "summary": "Diam dolor diam ipsum sit diam amet diam eos. Tempor erat elitr rebum at clita. Tempor erat elitr rebum at clita. ",
+        "data-wow-delay": "0.5s",
+        "_id": "d7cde56d-61ad-4c4a-9298-c684a287e0c8"
+    }
+}

@@ -1,3 +1,6 @@
+import { Routes, Route } from 'react-router-dom'
+
+import Home from './components/home/Home'
 import About from "./components/about/About"
 import BackToTop from "./components/back-to-top/BackToTop"
 import Booking from "./components/booking/Booking"
@@ -11,6 +14,7 @@ import ServiceList from "./components/service-list/ServiceList"
 import Spiner from "./components/spinner/Spiner"
 import TeamList from "./components/team-list/TeamList"
 import Topbar from "./components/topbar/Topbar"
+import Contact from './components/contact/Contact'
 
 function App() {
 
@@ -21,14 +25,18 @@ function App() {
       <Topbar />
       <Navbar />
 
-      <About />
-      <ServiceList />
-      <DestinationList />
-      <PackageList />
-      <Booking />
-      <Process />
-      <TeamList />
-      <NotFound />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<ServiceList />} />
+        <Route path="/destinations" element={<DestinationList />} />
+        <Route path="/packages" element={<PackageList />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/process" element={<Process />} />
+        <Route path="/team" element={<TeamList />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
 
       <Footer />
       <BackToTop />

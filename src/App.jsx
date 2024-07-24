@@ -4,6 +4,7 @@ import Booking from "./components/booking/Booking"
 import DestinationList from "./components/destination-list/DestinationList"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
+import NotFound from "./components/not-found/NotFound"
 import PackageList from "./components/package-list/PackageList"
 import Process from "./components/process/Process"
 import ServiceList from "./components/service-list/ServiceList"
@@ -27,7 +28,8 @@ function App() {
       <Booking />
       <Process />
       <TeamList />
-      
+      <NotFound />
+
       <Footer />
       <BackToTop />
     </>

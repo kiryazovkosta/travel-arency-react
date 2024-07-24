@@ -441,3 +441,7 @@
     padding-right: 0;
     border-right: none;
 }
+
+.list-item-record {
+    padding-top: 16px;
+}

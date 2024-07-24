@@ -1,4 +1,18 @@
+import { useEffect, useState } from "react";
+
+import * as packageService from '../../services/packageService'
+
 function PackageList() {
+
+    const [packages, setPackages] = useState([]);
+
+    useEffect(() => {
+        packageService.getAll()
+            .then(result => setPackages(result));
+    }, []);
+
+    console.log(packages);
+
     return (
         <div className="container-xxl py-5">
             <div className="container">

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import * as gameService from  '../../services/packageService';
+import * as packageService from  '../../services/packageService';
 
 function PackageCreate() {
 
@@ -12,7 +12,7 @@ function PackageCreate() {
         const gameData = Object.fromEntries(new FormData(ev.currentTarget));
 
         try {
-            await gameService.create(gameData);
+            await packageService.create(gameData);
             navigate('/packages');
         } catch (error) {
             //Error notification

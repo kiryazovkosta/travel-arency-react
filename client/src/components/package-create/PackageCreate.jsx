@@ -1,6 +1,14 @@
 
 
 function PackageCreate() {
+    
+    const createPackageSubmitHandler = (ev) => {
+        ev.preventDefault();
+
+        const gameData = Object.fromEntries(new FormData(ev.currentTarget));
+        console.log(gameData);
+    };
+    
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -9,7 +17,7 @@ function PackageCreate() {
                     <h1 className="mb-5">Create new package</h1>
                 </div>
                 <div className="row gy-5 gx-4 justify-content-center">
-                    <form>
+                    <form onSubmit={createPackageSubmitHandler}>
                         <div className="row g-3">
 
                             <div className="col-md-6">
@@ -47,8 +55,8 @@ function PackageCreate() {
 
                             <div className="col-md-6">
                                 <div className="form-floating">
-                                    <input type="text" className="form-control" id="data-wow-delay" name="data-wow-delay" placeholder="Package data-wow-delay in format 0.5s" />
-                                    <label htmlFor="data-wow-delay">Package data-wow-delay in format 0.5s</label>
+                                    <input type="text" className="form-control" id="dataWowDelay" name="dataWowDelay" placeholder="Package data-wow-delay in format 0.5s" />
+                                    <label htmlFor="dataWowDelay">Package data-wow-delay in format 0.5s</label>
                                 </div>
                             </div>
 

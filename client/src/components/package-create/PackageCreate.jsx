@@ -1,12 +1,23 @@
+import { useNavigate } from 'react-router-dom';
 
+import * as gameService from  '../../services/packageService';
 
 function PackageCreate() {
+
+    const navigate = useNavigate();
     
-    const createPackageSubmitHandler = (ev) => {
+    const createPackageSubmitHandler = async (ev) => {
         ev.preventDefault();
 
         const gameData = Object.fromEntries(new FormData(ev.currentTarget));
-        console.log(gameData);
+
+        try {
+            await gameService.create(gameData);
+            navigate('/packages');
+        } catch (error) {
+            //Error notification
+            console.log(err);
+        }
     };
     
     return (

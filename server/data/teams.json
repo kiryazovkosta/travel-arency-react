@@ -1,0 +1,30 @@
+{
+    "75f7c91d-1a5f-41d8-b125-41ff8ad92104": {
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897573/team-1_a2yzog.jpg",
+        "name": "Georgi Georgiev Georgiev",
+        "designation": "CEO",
+        "wowDelay": "0.1s",
+        "_id": "75f7c91d-1a5f-41d8-b125-41ff8ad92104"
+    },
+    "d7cfa672-20d1-40e2-85fa-d375886c2607": {
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897576/team-2_zl4pbd.jpg",
+        "name": "Maria Petrova Petrova",
+        "designation": "Sales Manager",
+        "wowDelay": "0.3s",
+        "_id": "d7cfa672-20d1-40e2-85fa-d375886c2607"
+    },
+    "145c4fb7-b326-4506-b5c2-2e493a1c2112": {
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897579/team-3_qlywef.jpg",
+        "name": "Ivan Ivanov Ivanov",
+        "designation": "Senior tour guide",
+        "wowDelay": "0.5s",
+        "_id": "145c4fb7-b326-4506-b5c2-2e493a1c2112"
+    },
+    "042c67dd-9fbb-4ea2-a9ce-85e7259ac095": {
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897571/team-4_oqm8l5.jpg",
+        "name": "Anelia Hristova Hristova",
+        "designation": "Tour guide",
+        "wowDelay": "0.7s",
+        "_id": "042c67dd-9fbb-4ea2-a9ce-85e7259ac095"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "2ff38255-0cb5-4053-9f69-881cd53706d6": {
+        "icon": "fa fa-3x fa-globe text-primary mb-4",
+        "name": "WorldWide Tours",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.1s",
+        "_id": "2ff38255-0cb5-4053-9f69-881cd53706d6"
+    },
+    "72dfe4bb-3a66-449c-8329-47631053a316": {
+        "icon": "fa fa-3x fa-hotel text-primary mb-4",
+        "name": "Hotel Reservation",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.3s",
+        "_id": "72dfe4bb-3a66-449c-8329-47631053a316"
+    },
+    "ccc15771-30f6-4c53-8505-57babe0ffc73": {
+        "icon": "fa fa-3x fa-user text-primary mb-4",
+        "name": "Travel Guides",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.5s",
+        "_id": "ccc15771-30f6-4c53-8505-57babe0ffc73"
+    },
+    "ae479cde-c9d5-425a-b297-b7a27c1e7849": {
+        "icon": "fa fa-3x fa-cog text-primary mb-4",
+        "name": "Event Management",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.7s",
+        "_id": "ae479cde-c9d5-425a-b297-b7a27c1e7849"
+    },
+    "13bf5bee-84b3-4e19-8c47-17da560b4ff9": {
+        "icon": "fa fa-3x fa-hotel text-primary mb-4",
+        "name": "Local Trips",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.1s",
+        "_id": "13bf5bee-84b3-4e19-8c47-17da560b4ff9"
+    },
+    "62c26abe-3a40-4bfc-9f57-fbe6b71699ec": {
+        "icon": "fa fa-3x fa-hotel text-primary mb-4",
+        "name": "Rent A Car",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.3s",
+        "_id": "62c26abe-3a40-4bfc-9f57-fbe6b71699ec"
+    },
+    "78baa8ec-6494-426b-931a-e0dff5b57cd5": {
+        "icon": "fa fa-3x fa-hotel text-primary mb-4",
+        "name": "Food Tourism",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.5s",
+        "_id": "78baa8ec-6494-426b-931a-e0dff5b57cd5"
+    },
+    "033f21a9-183c-4c0c-86da-495088b774f7": {
+        "icon": "fa fa-3x fa-hotel text-primary mb-4",
+        "name": "Sport Eventa",
+        "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+        "wowDelay": "0.7s",
+        "_id": "033f21a9-183c-4c0c-86da-495088b774f7"
+    }
+}

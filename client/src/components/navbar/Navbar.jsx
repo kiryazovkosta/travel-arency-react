@@ -35,8 +35,8 @@ function Navbar() {
                 </div>
             </nav>
     
-            <div className="container-fluid bg-primary py-5 mb-5 hero-header">
-                <div className="container py-5">
+            <div className="container-fluid bg-primary navbar-image mb-5 hero-header">
+                <div className="container navbar-image">
                     <div className="row justify-content-center py-5">
                         <div className="col-lg-10 pt-lg-5 mt-lg-5 text-center">
                             <h1 className="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us</h1>

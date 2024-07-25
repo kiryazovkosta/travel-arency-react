@@ -1,0 +1,23 @@
+{
+    "f72993ea-e7bb-4870-b22f-c1fddd253bef": {
+        "icon": "fa fa-globe fa-3x text-white",
+        "step": "Choose A Destination",
+        "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+        "wowDelay": "0.1s",
+        "_id": "f72993ea-e7bb-4870-b22f-c1fddd253bef"
+    },
+    "ea22b296-abf4-445d-b95c-5e9b08eceb17": {
+        "icon": "fa fa-dollar-sign fa-3x text-white",
+        "step": "Pay Online",
+        "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+        "wowDelay": "0.3s",
+        "_id": "ea22b296-abf4-445d-b95c-5e9b08eceb17"
+    },
+    "8c65d416-f07b-4b04-bafc-65edc2e71ab9": {
+        "icon": "fa fa-plane fa-3x text-white",
+        "step": "Fly Today",
+        "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+        "wowDelay": "0.5s",
+        "_id": "8c65d416-f07b-4b04-bafc-65edc2e71ab9"
+    }
+}

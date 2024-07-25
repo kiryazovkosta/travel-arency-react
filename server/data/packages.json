@@ -3,8 +3,8 @@
         "title": "Thailand",
         "duration": "3 days",
         "persons": "2",
-        "price": 149.00,
-        "imageUrl": "img/package-1.jpg",
+        "price": "149.00",
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893335/package-1_woerja.jpg",
         "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
         "dataWowDelay": "0.1s",
         "_id": "7cd1d676-24d7-4d26-9693-b529e8829ae8"
@@ -13,8 +13,8 @@
         "title": "Indonesia",
         "duration": "5 days",
         "persons": "3",
-        "price": 320.00,
-        "imageUrl": "img/package-2.jpg",
+        "price": "320.00",
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893337/package-2_izxkrl.jpg",
         "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
         "dataWowDelay": "0.3s",
         "_id": "be731f72-1338-48f4-98c3-c0e0ff4c2a58"
@@ -23,8 +23,8 @@
         "title": "Malaysia",
         "duration": "2 days",
         "persons": "2",
-        "price": 212.00,
-        "imageUrl": "img/package-3.jpg",
+        "price": "212.00",
+        "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893340/package-3_oijram.jpg",
         "summary": "Diam dolor diam ipsum sit diam amet diam eos. Tempor erat elitr rebum at clita. ",
         "dataWowDelay": "0.5s",
         "_id": "d7cde56d-61ad-4c4a-9298-c684a287e0c8"

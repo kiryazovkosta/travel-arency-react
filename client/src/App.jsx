@@ -16,6 +16,7 @@ import TeamList from "./components/team-list/TeamList"
 import Topbar from "./components/topbar/Topbar"
 import Contact from './components/contact/Contact'
 import PackageCreate from './components/package-create/PackageCreate'
+import PackageDetails from './components/package-details/PackageDetails'
 
 function App() {
 
@@ -29,10 +30,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+
         <Route path="/services" element={<ServiceList />} />
+
         <Route path="/destinations" element={<DestinationList />} />
+
         <Route path="/packages" element={<PackageList />} />
         <Route path="/packages/create" element={<PackageCreate />} />
+        <Route path="/packages/:id" element={<PackageDetails />} />
+
         <Route path="/booking" element={<Booking />} />
         <Route path="/process" element={<Process />} />
         <Route path="/team" element={<TeamList />} />

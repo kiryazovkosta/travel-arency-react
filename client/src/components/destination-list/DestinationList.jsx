@@ -1,4 +1,33 @@
+import { useEffect, useState } from "react";
+
+import DestinationLastItem from "./destination-list-item/DestinationLastItem";
+import DestinationListItem from "./destination-list-item/DestinationListItem";
+
+import * as destinationService from '../../services/destinationService';
+
 function DestinationList() {
+
+    const [destinations, setDestinations] = useState([]);
+
+    useEffect(() => {
+        destinationService.getAll()
+            .then(setDestinations)
+    }, []);
+
+    const chunkArray = (array, chunkSize) => {
+        if (!Array.isArray(array)) {
+            return [];
+        }
+        const chunks = [];
+        for (let i = 0; i < array.length; i += chunkSize) {
+            chunks.push(array.slice(i, i + chunkSize));
+        }
+        return chunks;
+    };
+
+    // Chunk the destinations array into arrays of 4 items each
+    const chunkedDestinations = chunkArray(destinations, 4);
+
     return (
         <div className="container-xxl py-5 destination">
             <div className="container">
@@ -6,40 +35,24 @@ function DestinationList() {
                     <h6 className="section-title bg-white text-center text-primary px-3">Destination</h6>
                     <h1 className="mb-5">Popular Destination</h1>
                 </div>
-                <div className="row g-3">
-                    <div className="col-lg-7 col-md-6">
-                        <div className="row g-3">
-                            <div className="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                                <a className="position-relative d-block overflow-hidden" href="">
-                                    <img className="img-fluid" src="img/destination-1.jpg" alt="" />
-                                    <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30% OFF</div>
-                                    <div className="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Thailand</div>
-                                </a>
-                            </div>
-                            <div className="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                                <a className="position-relative d-block overflow-hidden" href="">
-                                    <img className="img-fluid" src="img/destination-2.jpg" alt="" />
-                                    <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25% OFF</div>
-                                    <div className="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Malaysia</div>
-                                </a>
-                            </div>
-                            <div className="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                                <a className="position-relative d-block overflow-hidden" href="">
-                                    <img className="img-fluid" src="img/destination-3.jpg" alt="" />
-                                    <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35% OFF</div>
-                                    <div className="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Australia</div>
-                                </a>
+                {chunkedDestinations.map((chunk, chunkIndex) => (
+                    <div className="row g-3" key={chunkIndex}>
+                        <div className="col-lg-7 col-md-6">
+                            <div className="row g-3">
+                                {chunk.slice(0, 3).map((destination, index) => (
+                                    <div className={`col-lg-${index === 0 ? 12 : 6} col-md-12 wow zoomIn`} data-wow-delay={`${0.1 * (index + 1)}s`} key={destination._id}>
+                                        <DestinationListItem key={destination._id} {...destination} />
+                                    </div>
+                                ))}
                             </div>
                         </div>
+                        {chunk[3] && (
+                            <div className="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style={{ minHeight: "350px" }}>
+                                <DestinationListItem key={chunk[3]._id}  {...chunk[3]} />
+                            </div>
+                        )}
                     </div>
-                    <div className="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style={{ minHeight: "350px" }}>
-                        <a className="position-relative d-block h-100 overflow-hidden" href="">
-                            <img className="img-fluid position-absolute w-100 h-100" src="img/destination-4.jpg" alt="" style={{ objectFit: "cover" }} />
-                            <div className="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF</div>
-                            <div className="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Indonesia</div>
-                        </a>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     )

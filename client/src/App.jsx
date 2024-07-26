@@ -1,4 +1,9 @@
-import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+
+import { Paths } from './utils/Paths'
+import AuthContext from './contexts/authContext'
+import * as userService from './services/userService'
 
 import Home from './components/home/Home'
 import About from "./components/about/About"
@@ -21,16 +26,15 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Logout from './components/logout/Logout'
 
-import { Paths } from './utils/Paths'
-import { useState } from 'react'
-import AuthContext from './contexts/authContext'
-
 function App() {
 
+  const navigate = useNavigate();
   const [auth, setAuth] = useState({});
 
-  const loginSubmitHandler = (values) => {
-    console.log(values);
+  const loginSubmitHandler = async (values) => {
+    const result = await userService.login(values.email, values.password);
+    setAuth(result);
+    navigate(Paths.home);
   };
 
   return (

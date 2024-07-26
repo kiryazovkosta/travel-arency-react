@@ -23,6 +23,7 @@ import Logout from './components/logout/Logout'
 
 import { Paths } from './utils/Paths'
 import { useState } from 'react'
+import AuthContext from './contexts/authContext'
 
 function App() {
 
@@ -30,41 +31,41 @@ function App() {
 
   const loginSubmitHandler = (values) => {
     console.log(values);
-  }
+  };
 
   return (
-    <>
-      {/* <Spiner /> */}
+    <AuthContext.Provider value={{ loginSubmitHandler }} >
+      <>
+        <Topbar />
+        <Navbar />
 
-      <Topbar />
-      <Navbar />
+        <Routes>
+          <Route path={Paths.home} element={<Home />} />
+          <Route path={Paths.about} element={<About />} />
 
-      <Routes>
-        <Route path={Paths.home} element={<Home />} />
-        <Route path={Paths.about} element={<About />} />
+          <Route path={Paths.services} element={<ServiceList />} />
+          <Route path={Paths.destinations} element={<DestinationList />} />
 
-        <Route path={Paths.services} element={<ServiceList />} />
-        <Route path={Paths.destinations} element={<DestinationList />} />
+          <Route path={Paths.packages} element={<PackageList />} />
+          <Route path={Paths.packageCreate} element={<PackageCreate />} />
+          <Route path={Paths.packageDetails} element={<PackageDetails />} />
 
-        <Route path={Paths.packages} element={<PackageList />} />
-        <Route path={Paths.packageCreate} element={<PackageCreate />} />
-        <Route path={Paths.packageDetails} element={<PackageDetails />} />
+          <Route path={Paths.booking} element={<Booking />} />
+          <Route path={Paths.processing} element={<Process />} />
+          <Route path={Paths.team} element={<TeamList />} />
+          <Route path={Paths.contact} element={<Contact />} />
 
-        <Route path={Paths.booking} element={<Booking />} />
-        <Route path={Paths.processing} element={<Process />} />
-        <Route path={Paths.team} element={<TeamList />} />
-        <Route path={Paths.contact} element={<Contact />} />
+          <Route path={Paths.login} element={<Login />} />
+          <Route path={Paths.register} element={<Register />} />
+          <Route path={Paths.logout} element={<Logout />} />
 
-        <Route path={Paths.login} element={<Login loginSubmitHandler={loginSubmitHandler} />} />
-        <Route path={Paths.register} element={<Register />} />
-        <Route path={Paths.logout} element={<Logout />} />
+          <Route path={Paths.all} element={<NotFound />} />
+        </Routes>
 
-        <Route path={Paths.all}element={<NotFound />} />
-      </Routes>
-
-      <Footer />
-      <BackToTop />
-    </>
+        <Footer />
+        <BackToTop />
+      </>
+    </AuthContext.Provider>
   )
 }
 

@@ -1,10 +1,17 @@
 import { useForm } from "../../hooks/useForm";
 
-function Login() {
+const LoginFormKeys = {
+    Email: 'email',
+    Password: 'password'
+}
 
-    const { values, onChange, onSubmit } = useForm( {
-        email: '',
-        password: ''
+function Login({
+    loginSubmitHandler,
+}) {
+
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Email]: '',
+        [LoginFormKeys.Password]: ''
     });
 
     return (
@@ -19,14 +26,14 @@ function Login() {
                         <div className="row g-3">
                             <div className="col-md-12">
                                 <div className="form-floating">
-                                    <input type="email" className="form-control" id="email" name="email" placeholder="Enter your email" onChange={onChange} value={values.email} />
-                                    <label htmlFor="email">Email</label>
+                                    <input type="email" className="form-control" id={LoginFormKeys.Email} name={LoginFormKeys.Email} placeholder="Enter your email" onChange={onChange} value={values[LoginFormKeys.Email]} />
+                                    <label htmlFor={LoginFormKeys.Email}>Email</label>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="form-floating">
-                                    <input type="password" className="form-control" id="password" name="password" placeholder="Enter your password" onChange={onChange} value={values.password} />
-                                    <label htmlFor="duration">Password</label>
+                                    <input type="password" className="form-control" id={LoginFormKeys.Password} name={LoginFormKeys.Password} placeholder="Enter your password" onChange={onChange} value={values[LoginFormKeys.Password]} />
+                                    <label htmlFor={LoginFormKeys.Password}>Password</label>
                                 </div>
                             </div>
 

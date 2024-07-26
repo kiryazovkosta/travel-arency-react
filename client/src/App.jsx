@@ -22,8 +22,15 @@ import Register from './components/register/Register'
 import Logout from './components/logout/Logout'
 
 import { Paths } from './utils/Paths'
+import { useState } from 'react'
 
 function App() {
+
+  const [auth, setAuth] = useState({});
+
+  const loginSubmitHandler = (values) => {
+    console.log(values);
+  }
 
   return (
     <>
@@ -48,7 +55,7 @@ function App() {
         <Route path={Paths.team} element={<TeamList />} />
         <Route path={Paths.contact} element={<Contact />} />
 
-        <Route path={Paths.login} element={<Login />} />
+        <Route path={Paths.login} element={<Login loginSubmitHandler={loginSubmitHandler} />} />
         <Route path={Paths.register} element={<Register />} />
         <Route path={Paths.logout} element={<Logout />} />
 

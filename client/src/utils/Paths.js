@@ -13,5 +13,6 @@ export const Paths = {
     login: '/login',
     register: '/register',
     logout: '/logout',
+    profile: '/profile',
     all: '*'
 }

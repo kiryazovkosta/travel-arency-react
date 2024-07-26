@@ -17,6 +17,7 @@ import Topbar from "./components/topbar/Topbar"
 import Contact from './components/contact/Contact'
 import PackageCreate from './components/package-create/PackageCreate'
 import PackageDetails from './components/package-details/PackageDetails'
+import Login from './components/login/Login'
 
 function App() {
 
@@ -43,6 +44,9 @@ function App() {
         <Route path="/process" element={<Process />} />
         <Route path="/team" element={<TeamList />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/login" element={<Login />} />
+
         <Route path='*' element={<NotFound />} />
       </Routes>
 

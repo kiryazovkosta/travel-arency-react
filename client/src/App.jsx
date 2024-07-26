@@ -19,6 +19,7 @@ import PackageCreate from './components/package-create/PackageCreate'
 import PackageDetails from './components/package-details/PackageDetails'
 import Login from './components/login/Login'
 import Register from './components/register/Register'
+import Logout from './components/logout/Logout'
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/logout" element={<Logout />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>

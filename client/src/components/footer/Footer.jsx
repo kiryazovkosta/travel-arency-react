@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import { Paths } from '../../utils/Paths';
+
 function Footer() {
     return (
         <div className="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -7,8 +9,8 @@ function Footer() {
                 <div className="row g-5">
                     <div className="col-lg-3 col-md-6">
                         <h4 className="text-white mb-3">Company</h4>
-                        <Link className="btn btn-link" to="/about">About Us</Link>
-                        <Link className="btn btn-link" to="/contact">Contact Us</Link>
+                        <Link className="btn btn-link" to={Paths.about}>About Us</Link>
+                        <Link className="btn btn-link" to={Paths.contact}>Contact Us</Link>
                         <Link className="btn btn-link" to="/primary-policy">Privacy Policy</Link>
                         <Link className="btn btn-link" to="/terms">Terms & Condition</Link>
                         <Link className="btn btn-link" to="/help">FAQs & Help</Link>

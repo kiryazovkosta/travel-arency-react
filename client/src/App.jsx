@@ -52,7 +52,7 @@ function App() {
         <Route path={Paths.register} element={<Register />} />
         <Route path={Paths.logout} element={<Logout />} />
 
-        <Route path={Paths[404]}element={<NotFound />} />
+        <Route path={Paths.all}element={<NotFound />} />
       </Routes>
 
       <Footer />

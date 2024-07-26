@@ -21,6 +21,8 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Logout from './components/logout/Logout'
 
+import { Paths } from './utils/Paths'
+
 function App() {
 
   return (
@@ -31,27 +33,26 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path={Paths.home} element={<Home />} />
+        <Route path={Paths.about} element={<About />} />
 
-        <Route path="/services" element={<ServiceList />} />
+        <Route path={Paths.services} element={<ServiceList />} />
+        <Route path={Paths.destinations} element={<DestinationList />} />
 
-        <Route path="/destinations" element={<DestinationList />} />
+        <Route path={Paths.packages} element={<PackageList />} />
+        <Route path={Paths.packageCreate} element={<PackageCreate />} />
+        <Route path={Paths.packageDetails} element={<PackageDetails />} />
 
-        <Route path="/packages" element={<PackageList />} />
-        <Route path="/packages/create" element={<PackageCreate />} />
-        <Route path="/packages/:id" element={<PackageDetails />} />
+        <Route path={Paths.booking} element={<Booking />} />
+        <Route path={Paths.processing} element={<Process />} />
+        <Route path={Paths.team} element={<TeamList />} />
+        <Route path={Paths.contact} element={<Contact />} />
 
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/process" element={<Process />} />
-        <Route path="/team" element={<TeamList />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path={Paths.login} element={<Login />} />
+        <Route path={Paths.register} element={<Register />} />
+        <Route path={Paths.logout} element={<Logout />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/logout" element={<Logout />} />
-
-        <Route path='*' element={<NotFound />} />
+        <Route path={Paths[404]}element={<NotFound />} />
       </Routes>
 
       <Footer />

@@ -33,13 +33,15 @@ function App() {
 
   const loginSubmitHandler = async (values) => {
     const result = await userService.login(values.email, values.password);
-    console.log(result);
     setAuth(result);
     navigate(Paths.home);
   };
 
   const registerSubmitHandler = async (values) => {
-    console.log(values);
+    const result = await userService.register(values.email, values.password, values.username, values.avatar);
+    setAuth(result);
+    console.log(auth);
+    navigate(Paths.home);
   };
 
   const values = {
@@ -47,7 +49,7 @@ function App() {
     registerSubmitHandler,
     username: auth.username,
     email: auth.email,
-    isAuthenticated: !!auth.username,
+    isAuthenticated: !!auth.email,
   }
 
   return (

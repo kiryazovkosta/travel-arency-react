@@ -21,3 +21,12 @@ export const register = async (email, password, username, avatar) => {
 
     return result;
 }
+
+export const logout = async () => {
+    await httpClient.get(`${baseUrl}/logout`);
+}
+
+export const details = async () => {
+    const result = await httpClient.get(`${baseUrl}/me`);
+    return result;
+}

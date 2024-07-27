@@ -1,6 +1,6 @@
 import * as httpClient from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/jsonstore/packages';
+const baseUrl = 'http://localhost:3030/data/packages';
 
 export const getById = async (packageId) => {
     const result = await httpClient.get(`${baseUrl}/${packageId}`);

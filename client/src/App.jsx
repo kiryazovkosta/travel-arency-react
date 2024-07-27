@@ -29,27 +29,38 @@ import Logout from './components/logout/Logout'
 function App() {
 
   const navigate = useNavigate();
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(() => {
+    localStorage.removeItem('accessToken');
+    return {};
+  });
 
   const loginSubmitHandler = async (values) => {
     const result = await userService.login(values.email, values.password);
     setAuth(result);
+    localStorage.setItem('accessToken', result.accessToken);
     navigate(Paths.home);
   };
 
   const registerSubmitHandler = async (values) => {
     const result = await userService.register(values.email, values.password, values.username, values.avatar);
     setAuth(result);
-    console.log(auth);
+    localStorage.setItem('accessToken', result.accessToken);
+    navigate(Paths.home);
+  };
+
+  const logoutHandler = () => {
+    setAuth({});
+    localStorage.removeItem('accessToken');
     navigate(Paths.home);
   };
 
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username,
     email: auth.email,
-    isAuthenticated: !!auth.email,
+    isAuthenticated: !!auth.accessToken,
   }
 
   return (

@@ -1339,310 +1339,184 @@
     	}
     };
     var seedData = {
-    	recipes: {
-    		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551279012
-    		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551344360
-    		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551388703
-    		}
-    	},
-    	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
-    	records: {
-    		i01: {
-    			name: "John1",
-    			val: 1,
-    			_createdOn: 1613551388703
-    		},
-    		i02: {
-    			name: "John2",
-    			val: 1,
-    			_createdOn: 1613551388713
-    		},
-    		i03: {
-    			name: "John3",
-    			val: 2,
-    			_createdOn: 1613551388723
-    		},
-    		i04: {
-    			name: "John4",
-    			val: 2,
-    			_createdOn: 1613551388733
-    		},
-    		i05: {
-    			name: "John5",
-    			val: 2,
-    			_createdOn: 1613551388743
-    		},
-    		i06: {
-    			name: "John6",
-    			val: 3,
-    			_createdOn: 1613551388753
-    		},
-    		i07: {
-    			name: "John7",
-    			val: 3,
-    			_createdOn: 1613551388763
-    		},
-    		i08: {
-    			name: "John8",
-    			val: 2,
-    			_createdOn: 1613551388773
-    		},
-    		i09: {
-    			name: "John9",
-    			val: 3,
-    			_createdOn: 1613551388783
-    		},
-    		i10: {
-    			name: "John10",
-    			val: 1,
-    			_createdOn: 1613551388793
-    		}
-    	},
-    	catches: {
-    		"07f260f4-466c-4607-9a33-f7273b24f1b4": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			angler: "Paulo Admorim",
-    			weight: 636,
-    			species: "Atlantic Blue Marlin",
-    			location: "Vitoria, Brazil",
-    			bait: "trolled pink",
-    			captureTime: 80,
-    			_createdOn: 1614760714812,
-    			_id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-    		},
-    		"bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			angler: "John Does",
-    			weight: 554,
-    			species: "Atlantic Blue Marlin",
-    			location: "Buenos Aires, Argentina",
-    			bait: "trolled pink",
-    			captureTime: 120,
-    			_createdOn: 1614760782277,
-    			_id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-    		}
-    	},
-    	furniture: {
-    	},
-    	orders: {
-    	},
-    	movies: {
-    		"1240549d-f0e0-497e-ab99-eb8f703713d7": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Black Widow",
-    			description: "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-    			img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-    			_createdOn: 1614935055353,
-    			_id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
-    		},
-    		"143e5265-333e-4150-80e4-16b61de31aa0": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Wonder Woman 1984",
-    			description: "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-    			img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-    			_createdOn: 1614935181470,
-    			_id: "143e5265-333e-4150-80e4-16b61de31aa0"
-    		},
-    		"a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			title: "Top Gun 2",
-    			description: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-    			img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-    			_createdOn: 1614935268135,
-    			_id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
-    		}
-    	},
-    	likes: {
-    	},
-    	ideas: {
-    		"833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Best Pilates Workout To Do At Home",
-    			description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-    			img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-    			_createdOn: 1615033373504,
-    			_id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
-    		},
-    		"247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "4 Eady DIY Idea To Try!",
-    			description: "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-    			img: "./images/brightideacropped.jpg",
-    			_createdOn: 1615033452480,
-    			_id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
-    		},
-    		"b8608c22-dd57-4b24-948e-b358f536b958": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			title: "Dinner Recipe",
-    			description: "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-    			img: "./images/dinner.jpg",
-    			_createdOn: 1615033491967,
-    			_id: "b8608c22-dd57-4b24-948e-b358f536b958"
-    		}
-    	},
-    	catalog: {
-    		"53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			make: "Table",
-    			model: "Swedish",
-    			year: 2015,
-    			description: "Medium table",
-    			price: 235,
-    			img: "./images/table.png",
-    			material: "Hardwood",
-    			_createdOn: 1615545143015,
-    			_id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
-    		},
-    		"f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Sofa",
-    			model: "ES-549-M",
-    			year: 2018,
-    			description: "Three-person sofa, blue",
-    			price: 1200,
-    			img: "./images/sofa.jpg",
-    			material: "Frame - steel, plastic; Upholstery - fabric",
-    			_createdOn: 1615545572296,
-    			_id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
-    		},
-    		"c7f51805-242b-45ed-ae3e-80b68605141b": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Chair",
-    			model: "Bright Dining Collection",
-    			year: 2017,
-    			description: "Dining chair",
-    			price: 180,
-    			img: "./images/chair.jpg",
-    			material: "Wood laminate; leather",
-    			_createdOn: 1615546332126,
-    			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"
-    		}
-    	},
-    	teams: {
-    		"34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Storm Troopers",
-    			logoUrl: "/assets/atat.png",
-    			description: "These ARE the droids we're looking for",
-    			_createdOn: 1615737591748,
-    			_id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
-    		},
-    		"dc888b1a-400f-47f3-9619-07607966feb8": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Team Rocket",
-    			logoUrl: "/assets/rocket.png",
-    			description: "Gotta catch 'em all!",
-    			_createdOn: 1615737655083,
-    			_id: "dc888b1a-400f-47f3-9619-07607966feb8"
-    		},
-    		"733fa9a1-26b6-490d-b299-21f120b2f53a": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Minions",
-    			logoUrl: "/assets/hydrant.png",
-    			description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-    			_createdOn: 1615737688036,
-    			_id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-    		}
-    	},
-    	members: {
-    		"cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-    			status: "member",
-    			_createdOn: 1616236790262,
-    			_updatedOn: 1616236792930
-    		},
-    		"61a19986-3b86-4347-8ca4-8c074ed87591": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237188183,
-    			_updatedOn: 1616237189016
-    		},
-    		"8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-    			status: "member",
-    			_createdOn: 1616237193355,
-    			_updatedOn: 1616237195145
-    		},
-    		"9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237231299,
-    			_updatedOn: 1616237235713
-    		},
-    		"280b4a1a-d0f3-4639-aa54-6d9158365152": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    			teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-    			status: "member",
-    			_createdOn: 1616237257265,
-    			_updatedOn: 1616237278248
-    		},
-    		"e797fa57-bf0a-4749-8028-72dba715e5f8": {
-    			_ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-    			teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-    			status: "member",
-    			_createdOn: 1616237272948,
-    			_updatedOn: 1616237293676
-    		}
-    	}
+        destinations: {
+            "f40562e7-81a4-417c-aa7b-b0ef1bd26a63": {
+                "title": "Thailand",
+                "discount": "30",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721909957/destination-1_xnoahw.jpg",
+                "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+                "dataWowDelay": "0.1s",
+                "_id": "f40562e7-81a4-417c-aa7b-b0ef1bd26a63"
+            },
+            "fb7a335a-b5a9-4c87-a5ca-45cd4148c493": {
+                "title": "Malaysia",
+                "discount": "25",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721909959/destination-2_zzachr.jpg",
+                "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+                "dataWowDelay": "0.3s",
+                "_id": "fb7a335a-b5a9-4c87-a5ca-45cd4148c493"
+            },
+            "878c81d5-8a77-48c0-b998-d40420202771": {
+                "title": "Australia",
+                "discount": "35",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721909962/destination-3_ayvkvz.jpg",
+                "summary": "Diam dolor diam ipsum sit diam amet diam eos. Tempor erat elitr rebum at clita. ",
+                "dataWowDelay": "0.5s",
+                "_id": "878c81d5-8a77-48c0-b998-d40420202771"
+            },
+            "ae426a1e-b0a7-4987-8a8b-410c5bbbcee7": {
+                "title": "Indonesia",
+                "discount": "20",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721909966/destination-4_j1hvhp.jpg",
+                "summary": "Diam dolor diam ipsum sit diam amet diam eos. Tempor erat elitr rebum at clita. ",
+                "dataWowDelay": "0.7s",
+                "_id": "ae426a1e-b0a7-4987-8a8b-410c5bbbcee7"
+            }
+        },
+        packages: {
+            "7cd1d676-24d7-4d26-9693-b529e8829ae8": {
+                "title": "Thailand",
+                "duration": "3 days",
+                "persons": "2",
+                "price": "149.00",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893335/package-1_woerja.jpg",
+                "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+                "dataWowDelay": "0.1s",
+                "_id": "7cd1d676-24d7-4d26-9693-b529e8829ae8"
+            },
+            "be731f72-1338-48f4-98c3-c0e0ff4c2a58": {
+                "title": "Indonesia",
+                "duration": "5 days",
+                "persons": "3",
+                "price": "320.00",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893337/package-2_izxkrl.jpg",
+                "summary": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos",
+                "dataWowDelay": "0.3s",
+                "_id": "be731f72-1338-48f4-98c3-c0e0ff4c2a58"
+            },
+            "d7cde56d-61ad-4c4a-9298-c684a287e0c8": {
+                "title": "Malaysia",
+                "duration": "2 days",
+                "persons": "2",
+                "price": "212.00",
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721893340/package-3_oijram.jpg",
+                "summary": "Diam dolor diam ipsum sit diam amet diam eos. Tempor erat elitr rebum at clita. ",
+                "dataWowDelay": "0.5s",
+                "_id": "d7cde56d-61ad-4c4a-9298-c684a287e0c8"
+            }
+        },
+        processes: {
+            "f72993ea-e7bb-4870-b22f-c1fddd253bef": {
+                "icon": "fa fa-globe fa-3x text-white",
+                "step": "Choose A Destination",
+                "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+                "wowDelay": "0.1s",
+                "_id": "f72993ea-e7bb-4870-b22f-c1fddd253bef"
+            },
+            "ea22b296-abf4-445d-b95c-5e9b08eceb17": {
+                "icon": "fa fa-dollar-sign fa-3x text-white",
+                "step": "Pay Online",
+                "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+                "wowDelay": "0.3s",
+                "_id": "ea22b296-abf4-445d-b95c-5e9b08eceb17"
+            },
+            "8c65d416-f07b-4b04-bafc-65edc2e71ab9": {
+                "icon": "fa fa-plane fa-3x text-white",
+                "step": "Fly Today",
+                "description": "Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum et lorem et sit sed stet lorem sit",
+                "wowDelay": "0.5s",
+                "_id": "8c65d416-f07b-4b04-bafc-65edc2e71ab9"
+            }
+        },
+        services: {
+            "2ff38255-0cb5-4053-9f69-881cd53706d6": {
+                "icon": "fa fa-3x fa-globe text-primary mb-4",
+                "name": "WorldWide Tours",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.1s",
+                "_id": "2ff38255-0cb5-4053-9f69-881cd53706d6"
+            },
+            "72dfe4bb-3a66-449c-8329-47631053a316": {
+                "icon": "fa fa-3x fa-hotel text-primary mb-4",
+                "name": "Hotel Reservation",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.3s",
+                "_id": "72dfe4bb-3a66-449c-8329-47631053a316"
+            },
+            "ccc15771-30f6-4c53-8505-57babe0ffc73": {
+                "icon": "fa fa-3x fa-user text-primary mb-4",
+                "name": "Travel Guides",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.5s",
+                "_id": "ccc15771-30f6-4c53-8505-57babe0ffc73"
+            },
+            "ae479cde-c9d5-425a-b297-b7a27c1e7849": {
+                "icon": "fa fa-3x fa-cog text-primary mb-4",
+                "name": "Event Management",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.7s",
+                "_id": "ae479cde-c9d5-425a-b297-b7a27c1e7849"
+            },
+            "13bf5bee-84b3-4e19-8c47-17da560b4ff9": {
+                "icon": "fa fa-3x fa-hotel text-primary mb-4",
+                "name": "Local Trips",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.1s",
+                "_id": "13bf5bee-84b3-4e19-8c47-17da560b4ff9"
+            },
+            "62c26abe-3a40-4bfc-9f57-fbe6b71699ec": {
+                "icon": "fa fa-3x fa-hotel text-primary mb-4",
+                "name": "Rent A Car",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.3s",
+                "_id": "62c26abe-3a40-4bfc-9f57-fbe6b71699ec"
+            },
+            "78baa8ec-6494-426b-931a-e0dff5b57cd5": {
+                "icon": "fa fa-3x fa-hotel text-primary mb-4",
+                "name": "Food Tourism",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.5s",
+                "_id": "78baa8ec-6494-426b-931a-e0dff5b57cd5"
+            },
+            "033f21a9-183c-4c0c-86da-495088b774f7": {
+                "icon": "fa fa-3x fa-hotel text-primary mb-4",
+                "name": "Sport Eventa",
+                "description": "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
+                "wowDelay": "0.7s",
+                "_id": "033f21a9-183c-4c0c-86da-495088b774f7"
+            }
+        },
+        teams: {
+            "75f7c91d-1a5f-41d8-b125-41ff8ad92104": {
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897573/team-1_a2yzog.jpg",
+                "name": "Georgi Georgiev Georgiev",
+                "designation": "CEO",
+                "wowDelay": "0.1s",
+                "_id": "75f7c91d-1a5f-41d8-b125-41ff8ad92104"
+            },
+            "d7cfa672-20d1-40e2-85fa-d375886c2607": {
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897576/team-2_zl4pbd.jpg",
+                "name": "Maria Petrova Petrova",
+                "designation": "Sales Manager",
+                "wowDelay": "0.3s",
+                "_id": "d7cfa672-20d1-40e2-85fa-d375886c2607"
+            },
+            "145c4fb7-b326-4506-b5c2-2e493a1c2112": {
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897579/team-3_qlywef.jpg",
+                "name": "Ivan Ivanov Ivanov",
+                "designation": "Senior tour guide",
+                "wowDelay": "0.5s",
+                "_id": "145c4fb7-b326-4506-b5c2-2e493a1c2112"
+            },
+            "042c67dd-9fbb-4ea2-a9ce-85e7259ac095": {
+                "imageUrl": "https://res.cloudinary.com/dfn7thtsx/image/upload/v1721897571/team-4_oqm8l5.jpg",
+                "name": "Anelia Hristova Hristova",
+                "designation": "Tour guide",
+                "wowDelay": "0.7s",
+                "_id": "042c67dd-9fbb-4ea2-a9ce-85e7259ac095"
+            }
+        }
+
     };
     var rules$1 = {
     	users: {

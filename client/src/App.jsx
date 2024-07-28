@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 import { Paths } from './utils/Paths'
-import AuthContext from './contexts/authContext'
+import { AuthProvider } from './contexts/authContext'
 import * as userService from './services/userService'
 
 import Home from './components/home/Home'
@@ -64,7 +64,7 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={values} >
+    <AuthProvider value={values} >
       <>
         <Topbar />
         <Navbar />
@@ -95,7 +95,7 @@ function App() {
         <Footer />
         <BackToTop />
       </>
-    </AuthContext.Provider>
+    </AuthProvider>
   )
 }
 

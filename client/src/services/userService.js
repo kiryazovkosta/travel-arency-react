@@ -16,7 +16,8 @@ export const register = async (email, password, username, avatar) => {
         email,
         password,
         username,
-        avatar
+        avatar,
+        isAdmin: false,
     });
 
     return result;

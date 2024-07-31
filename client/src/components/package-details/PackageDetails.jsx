@@ -10,9 +10,6 @@ function PackageDetails({
     const { id } = useParams();
 
     useEffect(() => {
-        // packageService.getAll()
-        //     .then(setPackages);
-
         packageService.getById(id)
             .then(setPck);
     }, [id]);

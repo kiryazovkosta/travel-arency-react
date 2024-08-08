@@ -1,9 +1,40 @@
-function CreateReview() {
+import { useContext } from 'react';
+
+import * as reviewService from '../../../services/reviewService';
+
+import AuthContext from '../../../contexts/authContext';
+
+function CreateReview({
+    packageId, 
+    setReviews
+}) {
+    const {
+        isAuthenticated,
+        username,
+    } = useContext(AuthContext);
+
+    const addReviewHandler = async (ev) => {
+        ev.preventDefault();
+
+        console.log('clicked');
+
+        const formData = new FormData(ev.currentTarget);
+
+        const newReview = await reviewService.create(
+            packageId,
+            username,
+            formData.get('review'),
+            formData.get('stars')
+        );
+
+        setReviews(state => [...state, newReview]);
+    }
+
     return (
         <div className="row g-5 align-items-center">
             <div className="col-md-12">
                 <h1 className="text-white mb-4">Create a review</h1>
-                <form>
+                <form onSubmit={addReviewHandler}>
                     <div className="row g-3">
                         <div className="col-md-6">
                             <div className="form-floating">
@@ -25,8 +56,8 @@ function CreateReview() {
                         </div>
                         <div className="col-12">
                             <div className="form-floating">
-                                <textarea className="form-control bg-transparent" placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
-                                <label htmlFor="message">Special Request</label>
+                                <textarea className="form-control bg-transparent" placeholder="Enter your review" id="review" name="review" style={{ height: "100px" }}></textarea>
+                                <label htmlFor="review">Review text</label>
                             </div>
                         </div>
                         <div className="col-12">

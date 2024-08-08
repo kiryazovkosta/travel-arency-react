@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import * as packageService from '../../services/packageService';
+import * as reviewService from '../../services/reviewService';
 import CreateReview from '../reviews/create-review/CreateReview';
 import ReviewsList from '../reviews/reviews-list/ReviewsList';
 import AuthContext from '../../contexts/authContext';
@@ -14,14 +15,18 @@ function PackageDetails({
     } = useContext(AuthContext);
 
     const [pck, setPck] = useState({});
+    const [reviews, setReviews] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
         packageService.getById(id)
             .then(setPck);
+
+        reviewService.getAll(id)
+            .then(setReviews);
     }, [id]);
 
-    console.log(pck);
+    console.log(reviews);
 
     return (
         <div className="container-xxl py-5">
@@ -60,8 +65,8 @@ function PackageDetails({
                     </div>
 
                     <div className="reviews p-5">
-                        <CreateReview />
-                        <ReviewsList />
+                        <CreateReview packageId={id} setReviews={setReviews} />
+                        <ReviewsList reviews={reviews} />
                     </div>
 
                 </div>

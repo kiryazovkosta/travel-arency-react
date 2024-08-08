@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 
-function ReviewsListItem() {
+function ReviewsListItem({
+    username,
+    text,
+    stars
+}) {
+    const printStars = (stars) => {
+        let starsArray = [];
+        for (let index = 0; index < stars; index++) {
+            starsArray.push(<small key={index} className="fa fa-star text-primary"></small>);
+        }
+        return starsArray;
+    };
+
     return (
         <div className="review row g-3">
             <div className="col-md-6">
@@ -10,22 +22,17 @@ function ReviewsListItem() {
             </div>
             <div className="col-md-6">
                 <div className="form-floating">
-                    <p>Ivan Ivanov</p>
+                    <p>{username}</p>
                 </div>
             </div>
             <div className="col-12">
                 <div className="form-floating">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non impedit itaque soluta possimus, fugiat odit, quod exercitationem consequatur minus,
-                        totam iusto sapiente et earum mollitia? Odit quam obcaecati consequuntur excepturi!</p>
+                    <p>{text}</p>
                 </div>
             </div>
             <div className="col-6">
                 <div className="mb-3">
-                    <small className="fa fa-star text-primary"></small>
-                    <small className="fa fa-star text-primary"></small>
-                    <small className="fa fa-star text-primary"></small>
-                    <small className="fa fa-star text-primary"></small>
-                    <small className="fa fa-star text-primary"></small>
+                    {printStars(stars)}
                 </div>
             </div>
             <div className="col-6">

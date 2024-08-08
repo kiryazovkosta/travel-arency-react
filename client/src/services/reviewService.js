@@ -12,7 +12,7 @@ export const getAll = async (packageId) => {
     // return result;
 
     const result = await httpClient.get(baseUrl);
-    return Object.values(result);
+    return Object.values(result).filter(pkg => pkg.packageId === packageId);
 };
 
 export const create = async (packageId, username, text, stars) => {

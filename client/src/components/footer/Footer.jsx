@@ -31,22 +31,22 @@ function Footer() {
                         <h4 className="text-white mb-3">Gallery</h4>
                         <div className="row g-2 pt-2">
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-1.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110752/footer1_ptf7ng.jpg" alt="" />
                             </div>
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-2.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110752/footer2_ksnxui.jpg" alt="" />
                             </div>
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-3.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110752/footer3_tkcfig.jpg" alt="" />
                             </div>
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-2.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110752/footer4_wrevcc.jpg" alt="" />
                             </div>
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-3.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110752/footer5_uavutq.jpg" alt="" />
                             </div>
                             <div className="col-4">
-                                <img className="img-fluid bg-light p-1" src="img/package-1.jpg" alt="" />
+                                <img className="img-fluid bg-light p-1" src="https://res.cloudinary.com/dfn7thtsx/image/upload/v1723110753/footer6_jvyv44.jpg" alt="" />
                             </div>
                         </div>
                     </div>

@@ -1,11 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import * as packageService from '../../services/packageService';
+import CreateReview from '../reviews/create-review/CreateReview';
+import ReviewsList from '../reviews/reviews-list/ReviewsList';
+import AuthContext from '../../contexts/authContext';
 
 function PackageDetails({
 }) {
-    // const [packages, setPackages] = useState({});
+    const {
+        isAuthenticated
+    } = useContext(AuthContext);
+
     const [pck, setPck] = useState({});
     const { id } = useParams();
 
@@ -27,7 +34,7 @@ function PackageDetails({
                 <div className="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay={pck.dataWowDelay}>
                     <div className="package-item">
                         <div className="overflow-hidden">
-                            <img src={pck.imageUrl} alt="" />
+                            <img src={pck.imageUrl} alt="" style={{ width: '100%', height: '300px' }} />
                         </div>
                         <div className="d-flex border-bottom">
                             <small className="flex-fill text-center border-end py-2"><i className="fa fa-map-marker-alt text-primary me-2"></i>{pck.title}</small>
@@ -44,12 +51,19 @@ function PackageDetails({
                                 <small className="fa fa-star text-primary"></small>
                             </div>
                             <p>{pck.summary}</p>
-                            <div className="d-flex justify-content-center mb-2">
-                                {/* <Link to={`/packages/${_id}`} className="btn btn-sm btn-primary px-3 border-end" style={{ borderRadius: "30px 0 0 30px" }}>Read More</Link>
-                                <Link to="#" className="btn btn-sm btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link> */}
+                            <div className="d-flex ustify-content-right mb-2">
+                                {isAuthenticated && (
+                                    <Link to="#" className="btn btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
+                                )}
                             </div>
                         </div>
                     </div>
+
+                    <div className="reviews p-5">
+                        <CreateReview />
+                        <ReviewsList />
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as reviewService from '../../../services/reviewService';
 import { useForm } from "../../../hooks/useForm";
 import AuthContext from '../../../contexts/authContext';
+
+import Spiner from "../../spinner/Spiner";
 
 const CreateReviewFormKeys = {
     Unused: 'unused',
@@ -22,7 +24,11 @@ function CreateReview({
         username,
     } = useContext(AuthContext);
 
+    const [displaySpinner, setDisplaySpiner] = useState(false);
+
     const addReviewHandler = async (values) => {
+        setDisplaySpiner(true);
+
         const errors = validateForm();
         if (errors.length > 0) {
             errors.forEach(error => toast.error(error));
@@ -35,8 +41,9 @@ function CreateReview({
             } catch (error) {
                 toast.error('There is an error with creation of review!')
             }
-            
         }
+
+        setDisplaySpiner(false);
     }
 
     const clear = (values) => {
@@ -62,16 +69,6 @@ function CreateReview({
         } else if (stars < 1 || stars > 5) {
             errors.push("Stars is invalid.");
         }
-        // if (!email) {
-        //     errors.push("Email is required.");
-        // } else if (!/\S+@\S+\.\S+/.test(email)) {
-        //     errors.push("Email is invalid.");
-        // }
-        // if (!password) {
-        //     errors.push("Password is required.");
-        // } else if (password.length < 6) {
-        //     errors.push("Password must be at least 6 characters long.");
-        // }
 
         return errors;
     };
@@ -85,6 +82,9 @@ function CreateReview({
     return (
         <div className="row g-5 align-items-center">
             <div className="col-md-12">
+                {displaySpinner && (
+                    <Spiner />
+                )}
                 <h1 className="text-white mb-4">Create a review</h1>
                 <form onSubmit={onSubmit}>
                     <div className="row g-3">

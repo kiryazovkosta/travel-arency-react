@@ -27,7 +27,7 @@ function CreateReview({
             formData.get('stars')
         );
 
-        setReviews(state => [...state, newReview]);
+        setReviews(state => [newReview, ...state]);
     }
 
     return (

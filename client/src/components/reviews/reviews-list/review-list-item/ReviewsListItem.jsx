@@ -36,9 +36,9 @@ function ReviewsListItem({
                 </div>
             </div>
             <div className="col-6">
-                <div className="d-flex center-buttons mb-2">
-                    <Link to="#" className="btn btn-primary" >Edit</Link>
-                    <Link to="#" className="btn btn-secondary" >Delete</Link>
+                <div className="d-flex right-buttons mb-2">
+                    <Link to="#" className="btn btn-primary rounded-left" >Edit</Link>
+                    <Link to="#" className="btn btn-secondary rounded-right" >Delete</Link>
                 </div>
             </div>
         </div>

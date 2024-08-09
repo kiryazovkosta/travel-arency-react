@@ -65,7 +65,10 @@ function PackageDetails({
                     </div>
 
                     <div className="reviews p-5">
-                        <CreateReview packageId={id} setReviews={setReviews} />
+                        {isAuthenticated && (
+                            <CreateReview packageId={id} setReviews={setReviews} />
+                        )}
+                        
                         <ReviewsList reviews={reviews} />
                     </div>
 

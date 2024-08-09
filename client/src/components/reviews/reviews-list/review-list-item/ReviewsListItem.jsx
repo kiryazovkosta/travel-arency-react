@@ -1,10 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import AuthContext from "../../../../contexts/authContext";
+
+import { formatDate } from "../../../../utils/DateTimeUtils";
 
 function ReviewsListItem({
     username,
     text,
-    stars
+    stars,
+    _ownerId,
+    _createdOn
 }) {
+    const {
+        userId,
+    } = useContext(AuthContext);
+
     const printStars = (stars) => {
         let starsArray = [];
         for (let index = 0; index < stars; index++) {
@@ -13,16 +24,15 @@ function ReviewsListItem({
         return starsArray;
     };
 
+    const isOwner = _ownerId === userId;
+    
+    const fotmatedDate = formatDate(_createdOn);
+
     return (
         <div className="review row g-3">
-            <div className="col-md-6">
+            <div className="col-md-12">
                 <div className="form-floating">
-                    <p>2024-08-08 13:18:22</p>
-                </div>
-            </div>
-            <div className="col-md-6">
-                <div className="form-floating">
-                    <p>{username}</p>
+                    <p>This review is made by <strong>{username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
                 </div>
             </div>
             <div className="col-12">
@@ -36,10 +46,12 @@ function ReviewsListItem({
                 </div>
             </div>
             <div className="col-6">
-                <div className="d-flex right-buttons mb-2">
-                    <Link to="#" className="btn btn-primary rounded-left" >Edit</Link>
-                    <Link to="#" className="btn btn-secondary rounded-right" >Delete</Link>
-                </div>
+                {isOwner && (
+                    <div className="d-flex right-buttons mb-2">
+                        <Link to="#" className="btn btn-primary rounded-left" >Edit</Link>
+                        <Link to="#" className="btn btn-secondary rounded-right" >Delete</Link>
+                    </div>
+                )}
             </div>
         </div>
     )

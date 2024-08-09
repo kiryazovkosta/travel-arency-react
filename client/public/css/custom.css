@@ -39,3 +39,11 @@
 .rounded-right {
     border-radius: 0 30px 30px 0; 
 }
+
+.height100 {
+    height: 100%;
+}
+
+.created-on-time {
+    font-style: italic;
+}

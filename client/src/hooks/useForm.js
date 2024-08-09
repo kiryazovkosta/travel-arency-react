@@ -4,9 +4,11 @@ export function useForm(submitHandler, initialValues) {
     const [values, setValues] = useState(initialValues);
 
     const onChange = (ev) => {
+        const { name, value, type, checked } = ev.target;
+
         setValues(state => ({
             ...state,
-            [ev.target.name]: ev.target.value
+            [name]: type === 'checkbox' ? checked : value
         }));
     }
 

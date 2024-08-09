@@ -1,5 +1,8 @@
 import { useContext } from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import * as reviewService from '../../../services/reviewService';
 import { useForm } from "../../../hooks/useForm";
 import AuthContext from '../../../contexts/authContext';
@@ -22,11 +25,17 @@ function CreateReview({
     const addReviewHandler = async (values) => {
         const errors = validateForm();
         if (errors.length > 0) {
-            errors.forEach(error => console.log(error));
+            errors.forEach(error => toast.error(error));
         } else {
-            const newReview = await reviewService.create(packageId, username, values.review, values.stars);
-            setReviews(state => [newReview, ...state]);
-            clear(values);
+            try {
+                const newReview = await reviewService.create(packageId, username, values.review, values.stars);
+                setReviews(state => [newReview, ...state]);
+                clear(values);
+                toast.success('Review is successfully created!')
+            } catch (error) {
+                toast.error('There is an error with creation of review!')
+            }
+            
         }
     }
 
@@ -108,6 +117,8 @@ function CreateReview({
                         </div>
                     </div>
                 </form>
+
+                <ToastContainer />
             </div>
         </div>
     )

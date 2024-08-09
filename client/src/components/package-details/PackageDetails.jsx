@@ -26,8 +26,6 @@ function PackageDetails({
             .then(setReviews);
     }, [id]);
 
-    console.log(reviews);
-
     return (
         <div className="container-xxl py-5">
             <div className="container">

@@ -3,9 +3,6 @@ import ReviewsListItem from "./review-list-item/ReviewsListItem";
 function ReviewsList({
     reviews
 }) {
-
-    console.log(reviews);
-
     return (
         <div className="row g-5 align-items-center">
             <div className="col-md-12">

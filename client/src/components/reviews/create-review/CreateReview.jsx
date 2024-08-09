@@ -20,20 +20,56 @@ function CreateReview({
     } = useContext(AuthContext);
 
     const addReviewHandler = async (values) => {
-        console.log('clicked');
+        const errors = validateForm();
+        if (errors.length > 0) {
+            errors.forEach(error => console.log(error));
+        } else {
+            const newReview = await reviewService.create(packageId, username, values.review, values.stars);
+            setReviews(state => [newReview, ...state]);
+            clear(values);
+        }
+    }
 
-        const newReview = await reviewService.create(packageId, username, values.review, values.stars);
-
-        setReviews(state => [newReview, ...state]);
-
+    const clear = (values) => {
         values.unused = '';
-        values.stars = '';
+        values.stars = '1';
         values.review = '';
     }
 
+    const validateForm = () => {
+        const { unused, stars, review } = values;
+        const errors = [];
+
+        if (!unused) {
+             errors.push("Unused is required.");
+        }
+
+        if (!review) {
+            errors.push("Review is required.");
+        }
+
+        if (!stars) {
+            errors.push("Stars is required.");
+        } else if (stars < 1 || stars > 5) {
+            errors.push("Stars is invalid.");
+        }
+        // if (!email) {
+        //     errors.push("Email is required.");
+        // } else if (!/\S+@\S+\.\S+/.test(email)) {
+        //     errors.push("Email is invalid.");
+        // }
+        // if (!password) {
+        //     errors.push("Password is required.");
+        // } else if (password.length < 6) {
+        //     errors.push("Password must be at least 6 characters long.");
+        // }
+
+        return errors;
+    };
+
     const { values, onChange, onSubmit } = useForm(addReviewHandler, {
         [CreateReviewFormKeys.Unused]: '',
-        [CreateReviewFormKeys.Stars]: '',
+        [CreateReviewFormKeys.Stars]: '1',
         [CreateReviewFormKeys.Review]: ''
     });
 

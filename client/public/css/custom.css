@@ -47,3 +47,7 @@
 .created-on-time {
     font-style: italic;
 }
+
+.height200px {
+    height: 300px;
+}

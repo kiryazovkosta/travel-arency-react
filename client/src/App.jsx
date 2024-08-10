@@ -14,7 +14,6 @@ import NotFound from "./components/not-found/NotFound"
 import PackageList from "./components/package-list/PackageList"
 import Process from "./components/process/Process"
 import ServiceList from "./components/service-list/ServiceList"
-import Spiner from "./components/spinner/Spiner"
 import TeamList from "./components/team-list/TeamList"
 import Topbar from "./components/topbar/Topbar"
 import Contact from './components/contact/Contact'
@@ -23,6 +22,7 @@ import PackageDetails from './components/package-details/PackageDetails'
 import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Logout from './components/logout/Logout'
+import DestinationCreate from './components/destination-create/DestinationCreate'
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
           <Route path={Paths.about} element={<About />} />
           <Route path={Paths.services} element={<ServiceList />} />
           <Route path={Paths.destinations} element={<DestinationList />} />
+          <Route path={Paths.destinationCreate} element={<DestinationCreate />} />
           <Route path={Paths.packages} element={<PackageList />} />
           <Route path={Paths.packageCreate} element={<PackageCreate />} />
           <Route path={Paths.packageDetails} element={<PackageDetails />} />

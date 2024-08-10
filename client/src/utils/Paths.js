@@ -3,6 +3,7 @@ export const Paths = {
     about: '/about',
     services: '/services',
     destinations: '/destinations',
+    destinationCreate: '/destinations/create',
     packages: '/packages',
     packageCreate: '/packages/create',
     packageDetails: '/packages/:id',

@@ -6,3 +6,8 @@ export const getAll = async () => {
     const packages = await httpClient.get(baseUrl);
     return Object.values(packages);
 };
+
+export const create = async (destination) => {
+    const result = await httpClient.post(baseUrl, destination)
+    return result;
+}

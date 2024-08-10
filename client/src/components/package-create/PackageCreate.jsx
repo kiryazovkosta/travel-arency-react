@@ -128,7 +128,7 @@ function PackageCreate() {
                             <div className="col-md-6">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id="title" name="title" placeholder="Package title" onChange={onChange} value={values[PackageCreateFormKeys.Title]} />
-                                    <label htmlFor="name">Package title</label>
+                                    <label htmlFor="title">Package title</label>
                                 </div>
                             </div>
                             <div className="col-md-6">

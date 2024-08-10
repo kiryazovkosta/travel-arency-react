@@ -6,8 +6,8 @@ import AuthContext from "../../../../contexts/authContext";
 import { formatDate } from "../../../../utils/DateTimeUtils";
 
 function ReviewsListItem({
-    username,
-    text,
+    owner,
+    review,
     stars,
     _ownerId,
     _createdOn
@@ -32,12 +32,12 @@ function ReviewsListItem({
         <div className="review row g-3">
             <div className="col-md-12">
                 <div className="form-floating">
-                    <p>This review is made by <strong>{username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
+                    <p>This review is made by <strong>{owner.username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
                 </div>
             </div>
             <div className="col-12">
                 <div className="form-floating">
-                    <p>{text}</p>
+                    <p>{review}</p>
                 </div>
             </div>
             <div className="col-6">

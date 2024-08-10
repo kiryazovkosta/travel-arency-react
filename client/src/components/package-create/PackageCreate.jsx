@@ -40,9 +40,8 @@ function PackageCreate() {
 
     const addPackageHandler = async () => {
         setDisplaySpiner(true);
-        const gameData = { ...values };
 
-        const errors = validateForm(gameData);
+        const errors = validateForm();
         if (errors.length > 0) {
             errors.forEach(error => toast.error(error));
         } else {
@@ -58,41 +57,38 @@ function PackageCreate() {
         setDisplaySpiner(false);
     };
 
-    const validateForm = (gameDate) => {
-        console.log(typeof gameDate.price);
-        console.log(gameDate.price);
-        
+    const validateForm = () => {
         const errors = [];
 
-        if (!gameDate.title) {
+        if (!values.title) {
              errors.push("Title is required.");
         }
 
-        if (!gameDate.duration) {
+        if (!values.duration) {
             errors.push("Duration is required.");
         }
 
-        if (!gameDate.persons) {
+        if (!values.persons) {
             errors.push("Persons number is required.");
-        } else if (isNaN(gameDate.persons) || gameDate.persons.trim() === '') {
+        } else if (isNaN(values.persons) || values.persons.trim() === '') {
             errors.push("Persons number is invalid.");
         }
 
-        if (!gameDate.price) {
+        if (!values.price) {
             errors.push("Price is required.");
-        } else if (isNaN(gameDate.price) || gameDate.price.trim() === '') {
+        } else if (isNaN(values.price) || values.price.trim() === '') {
             errors.push("Price is invalid.");
         }
 
-        if (!gameDate.destinationId) {
+        if (!values.destinationId) {
             errors.push("Destination is required.");
         }
 
-        if (!gameDate.imageUrl) {
+        if (!values.imageUrl) {
             errors.push("Image is required.");
         }
 
-        if (!gameDate.summary) {
+        if (!values.summary) {
             errors.push("Summary is required.");
         }
 

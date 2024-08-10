@@ -34,7 +34,8 @@ function CreateReview({
             errors.forEach(error => toast.error(error));
         } else {
             try {
-                const newReview = await reviewService.create(packageId, username, values.review, values.stars);
+                const reviewData = { packageId, ...values };
+                const newReview = await reviewService.create(reviewData);
                 setReviews(state => [newReview, ...state]);
                 clear(values);
                 toast.success('Review is successfully created!')

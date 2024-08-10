@@ -9,19 +9,11 @@ export const getAll = async (packageId) => {
     });
 
     const result = await httpClient.get(`${baseUrl}?${query}`);
-    return Object.values(result);
+    return result;
+};
 
-
-};    // const result = await httpClient.get(baseUrl);
-    // return Object.values(result).filter(pkg => pkg.packageId === packageId);
-
-export const create = async (packageId, username, text, stars) => {
-    const newReview = await httpClient.post(baseUrl, {
-        packageId,
-        username,
-        text,
-        stars
-    });
+export const create = async (reviewData) => {
+    const newReview = await httpClient.post(baseUrl, reviewData);
 
     return newReview;
 };

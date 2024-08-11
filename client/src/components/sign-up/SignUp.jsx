@@ -5,33 +5,37 @@ import { useForm } from "../../hooks/useForm";
 
 import * as signUpService from "../../services/signupService"
 
+const SingUpFormKeys = {
+    SignUpEmail: 'signUpEmail'
+}
+
 function SignUp() {
 
     const validateForm = () => {
-        const { email } = values;
+        const { signUpEmail } = values;
         const errors = [];
 
-        if (!email) {
+        if (!signUpEmail) {
             errors.push("Email is required.");
-        } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+        } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(signUpEmail))) {
             errors.push("Email is invalid.");
         }
 
         return errors;
     };
 
-    const addEmailHandler = async () => {
+    const addEmailHandler = async (values) => {
         try {
             var errors = validateForm();
             if (errors.length > 0) {
                 errors.forEach(error => toast.error(error));
             } else {
-                const exists = await signUpService.existsEmail(values.email);
+                const exists = await signUpService.existsEmail(values.signUpEmail);
                 if (exists) {
                     toast.error('Provided email is already signup for our newsletter');
                 } else {
-                    await signUpService.create(values.email);
-                    values.email = '';
+                    await signUpService.create(values.signUpEmail);
+                    values.signUpEmail = '';
                     toast.success("You successfully signup for our newsletter");
                 }
             }
@@ -42,7 +46,7 @@ function SignUp() {
     }
 
     const { values, onChange, onSubmit } = useForm(addEmailHandler, {
-        email: ''
+        [SingUpFormKeys.SignUpEmail]: ''
     });
 
     return (
@@ -51,7 +55,7 @@ function SignUp() {
             <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
             <div className="position-relative mx-auto" style={{ maxWidth: "400px" }}>
                 <form onSubmit={onSubmit}>
-                    <input className="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name="email" id="email" placeholder="Your email" onChange={onChange} value={values["email"]} />
+                    <input className="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name={SingUpFormKeys.SignUpEmail} id={SingUpFormKeys.SignUpEmail} placeholder="Your email" onChange={onChange} value={values[SingUpFormKeys.SignUpEmail]} />
                     <button type="submit" className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                 </form>
             </div>

@@ -23,11 +23,16 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Logout from './components/logout/Logout'
 import DestinationCreate from './components/destination-create/DestinationCreate'
+import ErrorBoundary from './components/error/ErrorBoundary'
+import ReviewEdit from './components/reviews/review-edit/ReviewEdit'
+import BaseAuthGuard from './guards/BaseAuthGuard'
+import AdminGuard from './guards/AdminGuard'
+import AuthGuard from './guards/AuthGuard'
 
 function App() {
   return (
-    <AuthProvider>
-      <>
+    <ErrorBoundary>
+      <AuthProvider>
         <Topbar />
         <Navbar />
 
@@ -36,24 +41,34 @@ function App() {
           <Route path={Paths.about} element={<About />} />
           <Route path={Paths.services} element={<ServiceList />} />
           <Route path={Paths.destinations} element={<DestinationList />} />
-          <Route path={Paths.destinationCreate} element={<DestinationCreate />} />
           <Route path={Paths.packages} element={<PackageList />} />
-          <Route path={Paths.packageCreate} element={<PackageCreate />} />
           <Route path={Paths.packageDetails} element={<PackageDetails />} />
-          <Route path={Paths.booking} element={<Booking />} />
           <Route path={Paths.processing} element={<Process />} />
           <Route path={Paths.team} element={<TeamList />} />
           <Route path={Paths.contact} element={<Contact />} />
           <Route path={Paths.login} element={<Login />} />
           <Route path={Paths.register} element={<Register />} />
-          <Route path={Paths.logout} element={<Logout />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path={Paths.reviewEdit} element={<ReviewEdit />} />
+            <Route path={Paths.booking} element={<Booking />} />
+            <Route path={Paths.logout} element={<Logout />} />
+          </Route>
+          
+          <Route element={<AdminGuard />}>
+            <Route path={Paths.destinationCreate} element={<DestinationCreate /> } />
+            <Route path={Paths.packageCreate} element={<PackageCreate />} />
+          </Route>
+
           <Route path={Paths.other} element={<NotFound />} />
+
         </Routes>
 
         <Footer />
         <BackToTop />
-      </>
-    </AuthProvider>
+      </AuthProvider>
+    </ErrorBoundary>
+
   )
 }
 

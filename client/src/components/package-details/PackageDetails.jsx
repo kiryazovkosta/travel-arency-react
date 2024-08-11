@@ -26,6 +26,10 @@ function PackageDetails({
             .then(setReviews);
     }, [id]);
 
+    if (Math.random() < 0.5) {
+        throw new Error("GameDetails exception is throwed!");
+    }
+
     return (
         <div className="container-xxl py-5">
             <div className="container">

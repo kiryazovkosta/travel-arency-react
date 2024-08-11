@@ -7,6 +7,8 @@ export const Paths = {
     packages: '/packages',
     packageCreate: '/packages/create',
     packageDetails: '/packages/:id',
+    reviewDelete: '/reviews/delete/:reviewId',
+    reviewEdit: '/reviews/edit/:reviewId',
     booking: '/booking',
     processing: '/process',
     team: '/team',

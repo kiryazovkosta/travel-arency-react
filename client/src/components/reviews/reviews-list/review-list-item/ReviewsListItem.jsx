@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../../../contexts/authContext";
 
 import { formatDate } from "../../../../utils/DateTimeUtils";
+import { Paths } from "../../../../utils/Paths";
 
 function ReviewsListItem({
+    _id,
     owner,
     review,
     stars,
@@ -50,8 +52,8 @@ function ReviewsListItem({
             <div className="col-6">
                 {isOwner && (
                     <div className="d-flex right-buttons mb-2">
-                        <Link to="#" className="btn btn-primary rounded-left" >Edit</Link>
-                        <Link to="#" className="btn btn-secondary rounded-right" >Delete</Link>
+                        <Link to={`/reviews/edit/${_id}`} className="btn btn-primary rounded-left" >Edit</Link>
+                        <Link to={`/reviews/delete/${_id}`} className="btn btn-secondary rounded-right" >Delete</Link>
                     </div>
                 )}
             </div>

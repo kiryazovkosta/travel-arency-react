@@ -9,7 +9,7 @@ function NavbarLogo() {
                 <h1 className="text-primary m-0"><i className="fa fa-map-marker-alt me-3"></i>KK Tourist</h1>
                 {/* <img src="img/logo.png" alt="Logo"> */}
             </Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="navbar-toggler">
                 <span className="fa fa-bars"></span>
             </button>
         </>

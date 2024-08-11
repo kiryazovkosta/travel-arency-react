@@ -9,7 +9,6 @@ export const existsEmail = async (email) => {
 };
 
 export const create = async (email) => {
-    console.log(email);
     const result = await httpClient.post(baseUrl, { "email": email});
     return result;
 }

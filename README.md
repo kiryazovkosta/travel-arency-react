@@ -4,9 +4,9 @@
 |---
 | [Structure](#structure)
 | [Run](#run)
-| [Tools and Libraries](#tools-libraries)
+| [JSON Store](#json-store)
 | [Features](#features)
-| - [JSON Store](#json-store)
+| - [JSON Store 2](#json-store2)
 | - [Authentication](#authentication)
 | - [Collections](#collections)
 

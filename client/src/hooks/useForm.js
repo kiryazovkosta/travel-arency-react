@@ -5,6 +5,7 @@ export function useForm(submitHandler, initialValues) {
 
     const onChange = (ev) => {
         const { name, value, type, checked } = ev.target;
+        console.log(`onChange event with: ${value}`);
 
         setValues(state => ({
             ...state,

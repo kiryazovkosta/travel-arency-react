@@ -8,7 +8,9 @@ export const getAll = async (packageId) => {
         load: `owner=_ownerId:users`,
     });
 
-    const result = await httpClient.get(`${baseUrl}?${query}`);
+    const order = '&sortBy=_createdOn%20desc'
+
+    const result = await httpClient.get(`${baseUrl}?${query}${order}`);
     return result;
 };
 

@@ -26,8 +26,6 @@ function SignUp() {
             if (errors.length > 0) {
                 errors.forEach(error => toast.error(error));
             } else {
-
-                console.log(values.email)
                 const exists = await signUpService.existsEmail(values.email);
                 if (exists) {
                     toast.error('Provided email is already signup for our newsletter');

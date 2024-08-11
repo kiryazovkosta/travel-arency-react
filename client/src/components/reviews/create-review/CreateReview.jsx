@@ -36,10 +36,13 @@ function CreateReview({
             try {
                 const reviewData = { packageId, ...values };
                 const newReview = await reviewService.create(reviewData);
+                newReview.owner = { username };
                 setReviews(state => [newReview, ...state]);
                 clear(values);
                 toast.success('Review is successfully created!')
             } catch (error) {
+                console.log(error);
+                
                 toast.error('There is an error with creation of review!')
             }
         }

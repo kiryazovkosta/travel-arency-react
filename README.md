@@ -31,7 +31,7 @@ This will compile the admin panel and then bundle the client, the server and the
 
 Note that changes to the data **will not be persisted**! All operations happen in memory and will be wiped when the service is restarted.
 
-### Features
+## Features
 
 This will compile the admin panel and then bundle the client, the server and the settings file (this contains all rules and seed data for the Collections service) into a single executable script.
 

@@ -1414,6 +1414,17 @@
                 "_id": "d7cde56d-61ad-4c4a-9298-c684a287e0c8"
             }
         },
+        reviews: {
+            "6916c404-3ba2-44d7-95ea-669fc8d60881": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "packageId": "be731f72-1338-48f4-98c3-c0e0ff4c2a58",
+                "unused": "Peter",
+                "stars": "4",
+                "review": "Some review from Peter",
+                "_createdOn": 1723445429794,
+                "_id": "6916c404-3ba2-44d7-95ea-669fc8d60881"
+            }
+        },
         processes: {
             "f72993ea-e7bb-4870-b22f-c1fddd253bef": {
                 "icon": "fa fa-globe fa-3x text-white",

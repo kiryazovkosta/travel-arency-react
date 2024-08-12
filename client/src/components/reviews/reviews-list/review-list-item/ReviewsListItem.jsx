@@ -1,10 +1,9 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 import AuthContext from "../../../../contexts/authContext";
 
 import { formatDate } from "../../../../utils/DateTimeUtils";
-import { Paths } from "../../../../utils/Paths";
 
 function ReviewsListItem({
     _id,
@@ -27,16 +26,14 @@ function ReviewsListItem({
     };
 
     const isOwner = _ownerId === userId;
-    
-    const fotmatedDate = formatDate(_createdOn);
 
-    const username = owner !== undefined ? owner.username : 'some_name';
+    const fotmatedDate = formatDate(_createdOn);
 
     return (
         <div className="review row g-3">
             <div className="col-md-12">
                 <div className="form-floating">
-                    <p>This review is made by <strong>{username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
+                    <p>This review is made by <strong>{owner.username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
                 </div>
             </div>
             <div className="col-12">

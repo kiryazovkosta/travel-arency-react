@@ -15,7 +15,7 @@ const CreateReviewFormKeys = {
     Review: 'review'
 }
 
-function CreateReview({
+function ReviewCreate({
     packageId,
     setReviews
 }) {
@@ -128,4 +128,4 @@ function CreateReview({
     )
 }
 
-export default CreateReview;
+export default ReviewCreate;

@@ -14,8 +14,17 @@ export const getAll = async (packageId) => {
     return result;
 };
 
+export const getById = async (reviewId) => {
+    const result = await httpClient.get(`${baseUrl}/${reviewId}`);
+    return result;
+};
+
 export const create = async (reviewData) => {
     const newReview = await httpClient.post(baseUrl, reviewData);
 
     return newReview;
+};
+
+export const remove = async (reviewId) => {
+    httpClient.remove(`${baseUrl}/${reviewId}`);
 };

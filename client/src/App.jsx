@@ -25,9 +25,9 @@ import Logout from './components/logout/Logout'
 import DestinationCreate from './components/destination-create/DestinationCreate'
 import ErrorBoundary from './components/error/ErrorBoundary'
 import ReviewEdit from './components/reviews/review-edit/ReviewEdit'
-import BaseAuthGuard from './guards/BaseAuthGuard'
 import AdminGuard from './guards/AdminGuard'
 import AuthGuard from './guards/AuthGuard'
+import ReviewDelete from './components/reviews/review-delete/ReviewDelete'
 
 function App() {
   return (
@@ -51,6 +51,7 @@ function App() {
 
           <Route element={<AuthGuard />}>
             <Route path={Paths.reviewEdit} element={<ReviewEdit />} />
+            <Route path={Paths.reviewDelete} element={<ReviewDelete />} />
             <Route path={Paths.booking} element={<Booking />} />
             <Route path={Paths.logout} element={<Logout />} />
           </Route>

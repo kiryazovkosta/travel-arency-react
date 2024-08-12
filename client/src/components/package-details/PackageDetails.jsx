@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import * as packageService from '../../services/packageService';
 import * as reviewService from '../../services/reviewService';
-import CreateReview from '../reviews/create-review/CreateReview';
 import ReviewsList from '../reviews/reviews-list/ReviewsList';
 import AuthContext from '../../contexts/authContext';
+import ReviewCreate from '../reviews/review-create/ReviewCreate';
 
 function PackageDetails({
 }) {
@@ -26,9 +26,6 @@ function PackageDetails({
             .then(setReviews);
     }, [id]);
 
-    if (Math.random() < 0.5) {
-        throw new Error("GameDetails exception is throwed!");
-    }
 
     return (
         <div className="container-xxl py-5">
@@ -68,7 +65,7 @@ function PackageDetails({
 
                     <div className="reviews p-5">
                         {isAuthenticated && (
-                            <CreateReview packageId={id} setReviews={setReviews} />
+                            <ReviewCreate packageId={id} setReviews={setReviews} />
                         )}
                         
                         <ReviewsList reviews={reviews} />

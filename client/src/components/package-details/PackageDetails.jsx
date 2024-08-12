@@ -26,6 +26,16 @@ function PackageDetails({
             .then(setReviews);
     }, [id]);
 
+    const printStars = (stars) => {
+        let starsArray = [];
+        for (let index = 0; index < stars; index++) {
+            starsArray.push(<small key={index} className="fa fa-star text-primary"></small>);
+        }
+        return starsArray;
+    };
+
+    console.log(pck.stars);
+
 
     return (
         <div className="container-xxl py-5">
@@ -48,11 +58,7 @@ function PackageDetails({
                         <div className="text-center p-4">
                             <h3 className="mb-0">${pck.price}</h3>
                             <div className="mb-3">
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
+                                {printStars(pck.stars)}
                             </div>
                             <p>{pck.summary}</p>
                             <div className="d-flex ustify-content-right mb-2">

@@ -19,5 +19,8 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
+      working-directory: ./client
+
     - name: Build for production
       run: npm run build
+      working-directory: ./client

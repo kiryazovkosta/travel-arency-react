@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,19 @@ import ReviewsList from '../reviews/reviews-list/ReviewsList';
 import AuthContext from '../../contexts/authContext';
 import ReviewCreate from '../reviews/review-create/ReviewCreate';
 
+const reducer = (state, action) => {
+    switch(action?.type) {
+        case 'GET_ALL_REVIEWS':
+            return [...action.payload];
+
+        default:
+            return state;
+
+    }
+
+    return state;
+}
+
 function PackageDetails({
 }) {
     const {
@@ -15,7 +28,8 @@ function PackageDetails({
     } = useContext(AuthContext);
 
     const [pck, setPck] = useState({});
-    const [reviews, setReviews] = useState([]);
+    //const [reviews, setReviews] = useState([]);
+    const [reviews, dispatch] = useReducer(reducer, {});
     const { id } = useParams();
 
     useEffect(() => {
@@ -23,7 +37,12 @@ function PackageDetails({
             .then(setPck);
 
         reviewService.getAll(id)
-            .then(setReviews);
+            .then((result) => {
+                dispatch({
+                    type: 'GET_ALL_REVIEWS',
+                    payload: result,
+                })
+            });
     }, [id]);
 
     const printStars = (stars) => {

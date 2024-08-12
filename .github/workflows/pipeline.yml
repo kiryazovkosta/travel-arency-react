@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
        run:
-         working-directory: client
+         working-directory: ./client/
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4
@@ -21,6 +21,7 @@ jobs:
       with:
         node-version: 20.x
         cache: 'npm'
+        cache-dependency-path: './client/package-lock.json'
 
     - name: Install dependencies
       run: npm install

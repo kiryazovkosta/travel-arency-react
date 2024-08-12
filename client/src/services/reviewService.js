@@ -25,6 +25,11 @@ export const create = async (reviewData) => {
     return newReview;
 };
 
+export const edit = async (reviewId, reviewData) => {
+    const newReview = await httpClient.put(`${baseUrl}/${reviewId}`, reviewData);
+    return newReview;
+};
+
 export const remove = async (reviewId) => {
     httpClient.remove(`${baseUrl}/${reviewId}`);
 };

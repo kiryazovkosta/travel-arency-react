@@ -17,7 +17,7 @@ const CreateReviewFormKeys = {
 
 function ReviewCreate({
     packageId,
-    setReviews
+    dispatch
 }) {
     const {
         isAuthenticated,
@@ -37,7 +37,10 @@ function ReviewCreate({
                 const reviewData = { packageId, ...values };
                 const newReview = await reviewService.create(reviewData);
                 newReview.owner = { username };
-                setReviews(state => [newReview, ...state]);
+                dispatch({
+                    type: 'ADD_REVIEW',
+                    payload: newReview
+                })
                 clear(values);
                 toast.success('Review is successfully created!')
             } catch (error) {

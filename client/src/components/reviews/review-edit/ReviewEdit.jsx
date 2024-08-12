@@ -10,38 +10,54 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import * as reviewService from "../../../services/reviewService";
 import { Paths } from "../../../utils/Paths";
-import { useForm } from "../../../hooks/useForm";
-
-const EditReviewFormKeys = {
-    Unused: 'unused',
-    Stars: 'stars',
-    Review: 'review'
-}
 
 function ReviewEdit() {
+    const navigate = useNavigate();
     const { reviewId } = useParams();
-    const [displaySpinner, setDisplaySpinner] = useState(false);
+    const [ displaySpinner, setDisplaySpinner ] = useState(false);
     const { userId } = useContext(AuthContext);
-    const [review, setReview] = useState({
-        [EditReviewFormKeys.Unused]: '',
-        [EditReviewFormKeys.Stars]: '1',
-        [EditReviewFormKeys.Review]: ''
+    const [ review, setReview ] = useState({
+        unused: '',
+        stars: '',
+        review: ''
     });
 
     useEffect(() => {
         reviewService.getById(reviewId)
-            .then(setReview);
+            .then(result => {
+                setReview(result);
+            });
     }, [reviewId]);
+
+    console.log(review);
     
     const isOwner = review._ownerId === userId;
 
-    const editReviewHandler = () => {
+    const editReviewHandler = async (e) => {
+        e.preventDefault();
 
+        const values = Object.fromEntries(new FormData(e.currentTarget));
+        console.log(values);
+
+        try {
+            const reviewData = { ...values, packageId: review.packageId};
+            await reviewService.edit(reviewId, reviewData);
+            navigate(`${Paths.packages}/${review.packageId}`)
+        } catch (error) {
+            console.log(error);
+            toast.error("The is an error with uodating of review!");
+        }
     };
 
-    const { values, onChange, onSubmit } = useForm(editReviewHandler, review); 
-    
+    const onChange = (ev) => {
+        const { name, value, type, checked } = ev.target;
 
+        setReview(state => ({
+            ...state,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    }
+    
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -50,31 +66,31 @@ function ReviewEdit() {
                         {displaySpinner && (
                             <Spiner />
                         )}
-                        <h1 className="text-white mb-4">Create a review</h1>
-                        <form onSubmit={onSubmit}>
+                        <h1 className="text-white mb-4">Update a review</h1>
+                        <form onSubmit={editReviewHandler}>
                             <div className="row g-3">
                                 <div className="col-md-6">
                                     <div className="form-floating">
-                                        <input type="text" className="form-control" id={EditReviewFormKeys.Unused} name={EditReviewFormKeys.Unused} onChange={onChange} value={values.unused} placeholder="Unused field" />
-                                        <label htmlFor={EditReviewFormKeys.Unused}>Unused field</label>
+                                        <input type="text" className="form-control" id="unused" name="unused" value={review.unused} onChange={onChange} placeholder="Unused field" />
+                                        <label htmlFor="unused">Unused field</label>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-floating">
-                                        <select className="form-select" id={EditReviewFormKeys.Stars} name={EditReviewFormKeys.Stars} onChange={onChange} value={values[EditReviewFormKeys.Stars]}>
+                                        <select className="form-select" id="stars" name="stars" value={review.stars} onChange={onChange}>
                                             <option value="1">Star 1</option>
                                             <option value="2">Star 2</option>
                                             <option value="3">Star 3</option>
                                             <option value="4">Star 4</option>
                                             <option value="5">Star 5</option>
                                         </select>
-                                        <label htmlFor={EditReviewFormKeys.Stars}>Stars for this review</label>
+                                        <label htmlFor="stars">Stars for this review</label>
                                     </div>
                                 </div>
                                 <div className="col-12">
                                     <div className="form-floating">
-                                        <textarea className="form-control height100" placeholder="Enter your review" id={EditReviewFormKeys.Rewiew} name={EditReviewFormKeys.Review} onChange={onChange} value={values[EditReviewFormKeys.Review]}></textarea>
-                                        <label htmlFor={EditReviewFormKeys.Review}>Review text</label>
+                                        <textarea className="form-control height100" placeholder="Enter your review" id="review" name="review" value={review.review} onChange={onChange}></textarea>
+                                        <label htmlFor="review">Review text</label>
                                     </div>
                                 </div>
                                 <div className="col-12">

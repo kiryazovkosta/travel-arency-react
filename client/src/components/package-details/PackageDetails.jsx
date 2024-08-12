@@ -12,7 +12,18 @@ const reducer = (state, action) => {
     switch(action?.type) {
         case 'GET_ALL_REVIEWS':
             return [...action.payload];
-
+        case 'ADD_REVIEW':
+            return [action.payload, ...state];
+            case 'EDIT_COMMENT':
+                return state.map(review => review._id === action.payload._id ? { 
+                    ...review, 
+                    unused: action.payload.unused,
+                    stars: action.payload.stars,
+                    review: action.payload.review
+                } 
+                : review);
+        case 'DELETE_REVIEW':
+            return [...state].filter(review => review._id !== action.payload._id);
         default:
             return state;
 
@@ -28,8 +39,7 @@ function PackageDetails({
     } = useContext(AuthContext);
 
     const [pck, setPck] = useState({});
-    //const [reviews, setReviews] = useState([]);
-    const [reviews, dispatch] = useReducer(reducer, {});
+    const [reviews, dispatch] = useReducer(reducer, []);
     const { id } = useParams();
 
     useEffect(() => {
@@ -52,9 +62,6 @@ function PackageDetails({
         }
         return starsArray;
     };
-
-    console.log(pck.stars);
-
 
     return (
         <div className="container-xxl py-5">
@@ -90,7 +97,7 @@ function PackageDetails({
 
                     <div className="reviews p-5">
                         {isAuthenticated && (
-                            <ReviewCreate packageId={id} setReviews={setReviews} />
+                            <ReviewCreate packageId={id} dispatch={dispatch} />
                         )}
                         
                         <ReviewsList reviews={reviews} />

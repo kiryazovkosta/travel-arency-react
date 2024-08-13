@@ -28,6 +28,9 @@ import ReviewEdit from './components/reviews/review-edit/ReviewEdit'
 import AdminGuard from './guards/AdminGuard'
 import AuthGuard from './guards/AuthGuard'
 import ReviewDelete from './components/reviews/review-delete/ReviewDelete'
+import BookingList from './components/booking/booking-list/BookingList'
+import ContactList from './components/contact-list/ContactList'
+import Newsletter from './components/newsletter/Newsletter'
 
 function App() {
   return (
@@ -55,9 +58,12 @@ function App() {
             <Route path={Paths.booking} element={<Booking />} />
             <Route path={Paths.logout} element={<Logout />} />
           </Route>
-          
+
           <Route element={<AdminGuard />}>
-            <Route path={Paths.destinationCreate} element={<DestinationCreate /> } />
+            <Route path={Paths.bookings} element={<BookingList />} />
+            <Route path={Paths.contacts} element={<ContactList />} />
+            <Route path={Paths.newsletter} element={<Newsletter />} />
+            <Route path={Paths.destinationCreate} element={<DestinationCreate />} />
             <Route path={Paths.packageCreate} element={<PackageCreate />} />
           </Route>
 

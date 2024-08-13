@@ -10,12 +10,15 @@ export const Paths = {
     reviewDelete: '/reviews/delete/:reviewId',
     reviewEdit: '/reviews/edit/:reviewId',
     booking: '/booking/:packageId',
+    bookings: '/bookings',
     processing: '/process',
     team: '/team',
     contact: '/contact',
+    contacts: '/contacts',
     login: '/login',
     register: '/register',
     logout: '/logout',
+    newsletter: '/newsletter',
     profile: '/profile',
     other: '*'
 }

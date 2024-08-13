@@ -37,8 +37,6 @@ function ReviewEdit() {
         e.preventDefault();
 
         const values = Object.fromEntries(new FormData(e.currentTarget));
-        console.log(values);
-
         try {
             const reviewData = { ...values, packageId: review.packageId};
             await reviewService.edit(reviewId, reviewData);

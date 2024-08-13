@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { useContext } from 'react';
 import AuthContext from '../../../contexts/authContext';
+import { Paths } from '../../../utils/Paths';
 
 function PackageListItem({
     title,
@@ -44,9 +45,9 @@ function PackageListItem({
                     </div>
                     <p>{summary}</p>
                     <div className="d-flex justify-content-center mb-2">
-                        <Link to={`/packages/${_id}`} className="btn btn-sm btn-primary px-3 border-end" style={{ borderRadius: "30px 0 0 30px" }}>Read More</Link>
+                        <Link to={`${Paths.packages}/${_id}`} className="btn btn-sm btn-primary px-3 border-end" style={{ borderRadius: "30px 0 0 30px" }}>Read More</Link>
                         {isAuthenticated && (
-                            <Link to="#" className="btn btn-sm btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
+                            <Link to={`/booking/${_id}`} className="btn btn-sm btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
                         )}
                         
                     </div>

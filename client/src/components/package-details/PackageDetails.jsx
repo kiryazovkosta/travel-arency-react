@@ -89,7 +89,7 @@ function PackageDetails({
                             <p>{pck.summary}</p>
                             <div className="d-flex ustify-content-right mb-2">
                                 {isAuthenticated && (
-                                    <Link to="#" className="btn btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
+                                    <Link to={`/booking/${id}`} className="btn btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
                                 )}
                             </div>
                         </div>

@@ -37,3 +37,28 @@ export const validateSignupForm = (values) => {
 
     return errors;
 };
+
+export const validateMessageForm = (values) => {
+    const { name, email, subject, message } = values;
+    const errors = [];
+
+    if (!name) {
+         errors.push("Name in contact form is required.");
+    }
+
+    if (!subject) {
+        errors.push("Subject in contact form is required.");
+    }
+
+    if (!message) {
+        errors.push("Message in contact form is required.");
+    }
+
+    if (!email) {
+        errors.push("Email in contact form is required.");
+    } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+        errors.push("Email in contact form is invalid.");
+    }
+
+    return errors;
+};

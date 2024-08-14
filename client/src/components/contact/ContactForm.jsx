@@ -1,12 +1,10 @@
-import { useNavigate } from 'react-router-dom';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useForm } from '../../hooks/useForm'
 
 import * as contactService from '../../services/contactService'
-import { Paths } from '../../utils/Paths';
+import { validateMessageForm } from '../../utils/Validators';
 
 const ContactFormKeys = {
     Name: 'name',
@@ -16,51 +14,21 @@ const ContactFormKeys = {
 }
 
 function ContactForm() {
-
-    const navigate = useNavigate();
-
-    const addContactHandler = async () => {
-        console.log('clicked');
-
-        const errors = validateForm();
+    const addContactHandler = async (values) => {
+        const errors = validateMessageForm(values);
         if (errors.length > 0) {
             errors.forEach(error => toast.error(error));
         } else {
             try {
                 const contactData = { ...values };
                 await contactService.create(contactData);
-                navigate(Paths.home);
-
+                clearForm();
+                toast.error('Successfully send a message with contact form!')
             } catch (error) {
                 toast.error('There is an error with sending of contact form!')
             }
         }
     }
-
-    const validateForm = () => {
-        const { name, email, subject, message } = values;
-        const errors = [];
-
-        if (!name) {
-             errors.push("Name in contact form is required.");
-        }
-
-        if (!subject) {
-            errors.push("Subject in contact form is required.");
-        }
-
-        if (!message) {
-            errors.push("Message in contact form is required.");
-        }
-
-        if (!email) {
-            errors.push("Email in contact form is required.");
-        } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
-            errors.push("Email in contact form is invalid.");
-        }
-
-        return errors;
-    };
 
     const { values, onChange, onSubmit} = useForm(addContactHandler, {
         [ContactFormKeys.Name]: '',
@@ -68,6 +36,13 @@ function ContactForm() {
         [ContactFormKeys.Subject]: '',
         [ContactFormKeys.Message]: ''
     })
+
+    const clearForm = () => {
+        document.getElementById(ContactFormKeys.Name).value = '';
+        document.getElementById(ContactFormKeys.Email).value = '';
+        document.getElementById(ContactFormKeys.Subject).value = '';
+        document.getElementById(ContactFormKeys.Message).value = '';
+    }
 
     return (
         <div className="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">

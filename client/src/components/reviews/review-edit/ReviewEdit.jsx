@@ -32,7 +32,7 @@ function ReviewEdit() {
         reviewService.getById(reviewId)
             .then(setReview);
     }, [reviewId]);
-    
+
     const isOwner = review._ownerId === userId;
 
     const editReviewHandler = () => {
@@ -40,6 +40,9 @@ function ReviewEdit() {
     };
 
     const { values, onChange, onSubmit } = useForm(editReviewHandler, review); 
+
+    console.log(values);
+    
     
 
     return (

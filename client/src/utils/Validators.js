@@ -9,7 +9,7 @@ export const validateRegistrationForm = (values) => {
     if (values.password !== values.confirmPassword) {
         return "Passwords do not match.";
     }
-    if (values.password.length < 6) {
+    if (values.password.length < 5) {
         return "Password must be at least 6 characters long.";
     }
     return null;
@@ -19,7 +19,7 @@ export const validateLoginForm = (values) => {
     if (!values.email || !values.password) {
         return "Email and password are required.";
     }
-    if (values.password.length < 6) {
+    if (values.password.length < 5) {
         return "Password must be at least 6 characters long.";
     }
     return null;

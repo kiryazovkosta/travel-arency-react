@@ -36,6 +36,7 @@ function SignUp() {
                 } else {
                     await signUpService.create(values.signUpEmail);
                     values.signUpEmail = '';
+                    document.getElementById(SingUpFormKeys.SignUpEmail).value = '';
                     toast.success("You successfully signup for our newsletter");
                 }
             }

@@ -11,7 +11,8 @@ function ReviewsListItem({
     review,
     stars,
     _ownerId,
-    _createdOn
+    _createdOn,
+    _updatedOn
 }) {
     const {
         userId,
@@ -27,13 +28,17 @@ function ReviewsListItem({
 
     const isOwner = _ownerId === userId;
 
-    const fotmatedDate = formatDate(_createdOn);
+    const isUpdated = _updatedOn !== undefined && _updatedOn !== null;
+
+    const fotmatedCreatedDate = formatDate(_createdOn);
+
+    const fotmatedUpdatedDate = isUpdated && formatDate(_updatedOn);
 
     return (
         <div className="review row g-3">
             <div className="col-md-12">
                 <div className="form-floating">
-                    <p>This review is made by <strong>{owner.username}</strong> on <time className="created-on-time">{fotmatedDate}</time></p>
+                    <p>This review is made by <strong>{owner.username}</strong> on <time className="created-on-time">{fotmatedCreatedDate}</time>{isUpdated && (<>Updated on <time className="created-on-time">{fotmatedUpdatedDate}</time></>)}</p>
                 </div>
             </div>
             <div className="col-12">

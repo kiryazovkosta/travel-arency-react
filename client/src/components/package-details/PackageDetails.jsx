@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,30 @@ import ReviewsList from '../reviews/reviews-list/ReviewsList';
 import AuthContext from '../../contexts/authContext';
 import ReviewCreate from '../reviews/review-create/ReviewCreate';
 
+const reducer = (state, action) => {
+    switch(action?.type) {
+        case 'GET_ALL_REVIEWS':
+            return [...action.payload];
+        case 'ADD_REVIEW':
+            return [action.payload, ...state];
+            case 'EDIT_COMMENT':
+                return state.map(review => review._id === action.payload._id ? { 
+                    ...review, 
+                    unused: action.payload.unused,
+                    stars: action.payload.stars,
+                    review: action.payload.review
+                } 
+                : review);
+        case 'DELETE_REVIEW':
+            return [...state].filter(review => review._id !== action.payload._id);
+        default:
+            return state;
+
+    }
+
+    return state;
+}
+
 function PackageDetails({
 }) {
     const {
@@ -15,7 +39,7 @@ function PackageDetails({
     } = useContext(AuthContext);
 
     const [pck, setPck] = useState({});
-    const [reviews, setReviews] = useState([]);
+    const [reviews, dispatch] = useReducer(reducer, []);
     const { id } = useParams();
 
     useEffect(() => {
@@ -23,9 +47,21 @@ function PackageDetails({
             .then(setPck);
 
         reviewService.getAll(id)
-            .then(setReviews);
+            .then((result) => {
+                dispatch({
+                    type: 'GET_ALL_REVIEWS',
+                    payload: result,
+                })
+            });
     }, [id]);
 
+    const printStars = (stars) => {
+        let starsArray = [];
+        for (let index = 0; index < stars; index++) {
+            starsArray.push(<small key={index} className="fa fa-star text-primary"></small>);
+        }
+        return starsArray;
+    };
 
     return (
         <div className="container-xxl py-5">
@@ -48,16 +84,12 @@ function PackageDetails({
                         <div className="text-center p-4">
                             <h3 className="mb-0">${pck.price}</h3>
                             <div className="mb-3">
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
-                                <small className="fa fa-star text-primary"></small>
+                                {printStars(pck.stars)}
                             </div>
                             <p>{pck.summary}</p>
                             <div className="d-flex ustify-content-right mb-2">
                                 {isAuthenticated && (
-                                    <Link to="#" className="btn btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
+                                    <Link to={`/booking/${id}`} className="btn btn-primary px-3" style={{ borderRadius: "0 30px 30px 0" }}>Book Now</Link>
                                 )}
                             </div>
                         </div>
@@ -65,7 +97,7 @@ function PackageDetails({
 
                     <div className="reviews p-5">
                         {isAuthenticated && (
-                            <ReviewCreate packageId={id} setReviews={setReviews} />
+                            <ReviewCreate packageId={id} dispatch={dispatch} />
                         )}
                         
                         <ReviewsList reviews={reviews} />

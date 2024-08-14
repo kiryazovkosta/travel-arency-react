@@ -19,6 +19,7 @@ const PackageCreateFormKeys = {
     DestinationId: 'destinationId',
     ImageUrl: 'imageUrl',
     DataWowDelay: 'dataWowDelay',
+    Stars: 'stars',
     Summary: 'summary'
 }
 
@@ -46,10 +47,11 @@ function PackageCreate() {
             errors.forEach(error => toast.error(error));
         } else {
             try {
-                await packageService.create(gameData);
+                await packageService.create(values);
                 navigate(Paths.packages);
     
             } catch (err) {
+                console.log(err);
                 toast.error('The is an error with creation of package!')
             }
         }
@@ -103,6 +105,7 @@ function PackageCreate() {
         [PackageCreateFormKeys.DestinationId]: '',
         [PackageCreateFormKeys.ImageUrl]: '',
         [PackageCreateFormKeys.DataWowDelay]: '',
+        [PackageCreateFormKeys.Stars]: '3',
         [PackageCreateFormKeys.Summary]: ''
     });
 
@@ -174,6 +177,19 @@ function PackageCreate() {
                                     <label htmlFor="dataWowDelay">Package data-wow-delay in format 0.5s</label>
                                 </div>
                             </div>
+
+                            <div className="col-md-6">
+                            <div className="form-floating">
+                                <select className="form-select" id="stars" name="stars" onChange={onChange} value={values[PackageCreateFormKeys.Stars]}>
+                                    <option value="1">Star 1</option>
+                                    <option value="2">Star 2</option>
+                                    <option value="3">Star 3</option>
+                                    <option value="4">Star 4</option>
+                                    <option value="5">Star 5</option>
+                                </select>
+                                <label htmlFor="stars">Stars for this package</label>
+                            </div>
+                        </div>
 
                             <div className="col-12">
                                 <div className="form-floating">

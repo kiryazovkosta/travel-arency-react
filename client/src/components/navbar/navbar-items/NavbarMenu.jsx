@@ -22,7 +22,9 @@ function NavbarMenu() {
                 <div className="nav-item dropdown">
                 <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Nomenclatures</Link>
                 <div className="dropdown-menu m-0">
-                    <Link to={Paths.booking} className="dropdown-item">Booking</Link>
+                    <Link to={Paths.bookings} className="dropdown-item">Bookings</Link>
+                    <Link to={Paths.contacts} className="dropdown-item">Contacts</Link>
+                    <Link to={Paths.newsletter} className="dropdown-item">Newsletter</Link>
                     <Link to={Paths.destinationCreate} className="dropdown-item">Create destination</Link>
                     <Link to={Paths.packageCreate} className="dropdown-item">Create package</Link>
                 </div>

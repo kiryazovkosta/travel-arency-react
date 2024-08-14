@@ -24,3 +24,16 @@ export const validateLoginForm = (values) => {
     }
     return null;
 };
+
+export const validateSignupForm = (values) => {
+    const { signUpEmail } = values;
+    const errors = [];
+
+    if (!signUpEmail) {
+        errors.push("Email is required.");
+    } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(signUpEmail))) {
+        errors.push("Email is invalid.");
+    }
+
+    return errors;
+};

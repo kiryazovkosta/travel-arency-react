@@ -5,28 +5,17 @@ import { useForm } from "../../hooks/useForm";
 
 import * as signUpService from "../../services/signupService"
 
+import { validateSignupForm } from '../../utils/Validators';
+
 const SingUpFormKeys = {
     SignUpEmail: 'signUpEmail'
 }
 
 function SignUp() {
 
-    const validateForm = () => {
-        const { signUpEmail } = values;
-        const errors = [];
-
-        if (!signUpEmail) {
-            errors.push("Email is required.");
-        } else if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(signUpEmail))) {
-            errors.push("Email is invalid.");
-        }
-
-        return errors;
-    };
-
     const addEmailHandler = async (values) => {
         try {
-            var errors = validateForm();
+            var errors = validateSignupForm(values);
             if (errors.length > 0) {
                 errors.forEach(error => toast.error(error));
             } else {

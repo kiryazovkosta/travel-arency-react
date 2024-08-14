@@ -17,3 +17,12 @@ export const create = async (packageData) => {
     const result = await httpClient.post(baseUrl, packageData)
     return result;
 };
+
+export const search = async (value) => {
+    const query = new URLSearchParams({
+        where: `title LIKE Bulgaria`
+    });
+
+    const packages = await httpClient.get(`${baseUrl}?${query}`);
+    return Object.values(packages);
+};

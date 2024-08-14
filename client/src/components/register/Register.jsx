@@ -1,26 +1,47 @@
-import { useContext } from "react"
+import { useEffect, useContext } from "react"
+
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useForm } from "../../hooks/useForm";
-import AuthContext
- from "../../contexts/authContext";
+import AuthContext from "../../contexts/authContext";
+
 const RegisterFormKeys = {
     Email: 'email',
     Password: 'password',
-    ConfirmPassword: 'confirm-password',
+    ConfirmPassword: 'confirmPassword',
     Username: 'username',
     Avatar: 'avatar'
 }
 
 function Register() {
     
-    const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { registerSubmitHandler, error, clearError } = useContext(AuthContext);
+
+    const { values, onChange } = useForm((e) => {
+        onSubmitHandler(e);
+    }, {
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
         [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Avatar]: '',
     });
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        await registerSubmitHandler(values);
+        if (error) {
+            toast.error(error);
+            clearError();
+        }
+    };
+
+    useEffect(() => {
+        if (error) {
+            toast.error(error);
+        }
+    }, [error]);
     
     return (
         <div className="container-xxl py-5">
@@ -30,7 +51,7 @@ function Register() {
                     <h1 className="mb-5">Create a new user</h1>
                 </div>
                 <div className="row g-3">
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={onSubmitHandler}>
                         <div className="row g-3">
                             <div className="col-md-12">
                                 <div className="form-floating">

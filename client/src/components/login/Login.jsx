@@ -1,6 +1,9 @@
-import { useContext } from "react";
-import { useForm } from "../../hooks/useForm";
+import { useEffect, useContext } from "react";
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { useForm } from "../../hooks/useForm";
 import AuthContext from "../../contexts/authContext";
 
 const LoginFormKeys = {
@@ -10,12 +13,38 @@ const LoginFormKeys = {
 
 function Login() {
 
-    const { loginSubmitHandler } = useContext(AuthContext)
+    const { 
+        loginSubmitHandler, 
+        error, 
+        clearError 
+    } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit } = useForm((e) => {
+        onSubmitHandler(e);
+    }, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: ''
     });
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        await loginSubmitHandler(values);
+        if (error) {
+            toast.error(error);
+            clearError();
+        }
+    };
+
+    // const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    //     [LoginFormKeys.Email]: '',
+    //     [LoginFormKeys.Password]: ''
+    // });
+
+    useEffect(() => {
+        if (error) {
+            toast.error(error);
+        }
+    }, [error]);
 
     return (
         <div className="container-xxl py-5">
@@ -25,7 +54,7 @@ function Login() {
                     <h1 className="mb-5">Login in system</h1>
                 </div>
                 <div className="row g-3">
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={onSubmitHandler}>
                         <div className="row g-3">
                             <div className="col-md-12">
                                 <div className="form-floating">
@@ -39,13 +68,6 @@ function Login() {
                                     <label htmlFor={LoginFormKeys.Password}>Password</label>
                                 </div>
                             </div>
-
-                            {/* <div className="col-md-12">
-                                <div className="form-check form-switch">
-                                    <input className="form-check-input" type="checkbox" value={values.remember} id="remember" name="remember" defaultChecked={values.remember} />
-                                    <label className="form-check-label" htmlFor="remember">Remember me</label>
-                                </div>
-                            </div> */}
 
                             <div className="col-12">
                                 <button className="btn btn-primary w-100 py-3" type="submit">Login</button>
@@ -61,6 +83,7 @@ function Login() {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

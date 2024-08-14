@@ -3,8 +3,12 @@ import * as httpClient from '../lib/request';
 const baseUrl = 'http://localhost:3030/data/bookings';
 
 export const getAll = async () => {
-    const packages = await httpClient.get(baseUrl);
-    return Object.values(packages);
+    const query = new URLSearchParams({
+        load: `owner=_ownerId:users,pkg=packageId:packages`,
+    });
+
+    const bookings = await httpClient.get(`${baseUrl}?${query}`);
+    return Object.values(bookings);
 };
 
 export const create = async (bookingData) => {

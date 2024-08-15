@@ -31,6 +31,7 @@ import ReviewDelete from './components/reviews/review-delete/ReviewDelete'
 import BookingList from './components/booking/booking-list/BookingList'
 import ContactList from './components/contact-list/ContactList'
 import Newsletter from './components/newsletter/Newsletter'
+import SearchResult from './components/search-result/SearchResult'
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path={Paths.contact} element={<Contact />} />
           <Route path={Paths.login} element={<Login />} />
           <Route path={Paths.register} element={<Register />} />
+          <Route path={Paths.searchResult} element={<SearchResult />} />
 
           <Route element={<AuthGuard />}>
             <Route path={Paths.reviewEdit} element={<ReviewEdit />} />

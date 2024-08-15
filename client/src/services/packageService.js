@@ -19,10 +19,25 @@ export const create = async (packageData) => {
 };
 
 export const search = async (value) => {
-    const query = new URLSearchParams({
-        where: `title LIKE Bulgaria`
-    });
+    // // Server does not works as I expect
+    // const query = new URLSearchParams({
+    //     where: `title LIKE "${value}"`
+    // });
 
-    const packages = await httpClient.get(`${baseUrl}?${query}`);
-    return Object.values(packages);
+    // const packages = await httpClient.get(`${baseUrl}?${query}`);
+    // return Object.values(packages);
+
+        // // Server does not works as I expect
+    // const query = new URLSearchParams({
+    //     where: `title LIKE "${value}"`
+    // });
+
+    const result = await httpClient.get(baseUrl);
+    var packages = Object.values(result);
+    console.log(packages);
+    
+    const filtered = packages.filter(p => p.title.includes(value));
+    console.log(filtered);
+
+    return filtered;
 };

@@ -1,0 +1,43 @@
+.search-pattern {
+    text-decoration: solid;
+    color: blue;
+    text-overflow: ellipsis;
+}
+
+.empty-search-result {
+    text-align: center;
+    text-transform: capitalize;
+    color: red;
+}
+
+.packages-div {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+}
+
+.link-to-packages {
+    display: block;
+    width: 400px;
+    height: 50px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Hover effect */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.link-to-packages:hover {
+    background: #357a8d;
+    transform: scale(1.05);
+}

@@ -19,6 +19,7 @@ export const Paths = {
     register: '/register',
     logout: '/logout',
     newsletter: '/newsletter',
+    searchResult: '/search-result',
     profile: '/profile',
     other: '*'
 }

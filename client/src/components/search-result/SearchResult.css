@@ -7,21 +7,21 @@
 .empty-search-result {
     text-align: center;
     text-transform: capitalize;
-    color: red;
+    color: lightslategray;
 }
 
 .packages-div {
     margin: 0;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .link-to-packages {
     display: block;
     width: 400px;
     height: 50px;
-    background: #4E9CAF;
+    background: #86B817;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
@@ -32,12 +32,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1em;
 
     /* Hover effect */
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .link-to-packages:hover {
-    background: #357a8d;
+    background: #86B817;
+    color: white;
     transform: scale(1.05);
 }

@@ -10,6 +10,7 @@ import * as packageService from '../../services/packageService';
 import * as destinationService from '../../services/destinationService';
 import { Paths } from '../../utils/Paths';
 import Spiner from "../../components/spinner/Spiner";
+import { validateCreatePackageForm } from '../../utils/Validators';
 
 const PackageCreateFormKeys = {
     Title: 'title',
@@ -42,7 +43,7 @@ function PackageCreate() {
     const addPackageHandler = async () => {
         setDisplaySpiner(true);
 
-        const errors = validateForm();
+        const errors = validateCreatePackageForm(values);
         if (errors.length > 0) {
             errors.forEach(error => toast.error(error));
         } else {
@@ -59,43 +60,7 @@ function PackageCreate() {
         setDisplaySpiner(false);
     };
 
-    const validateForm = () => {
-        const errors = [];
 
-        if (!values.title) {
-             errors.push("Title is required.");
-        }
-
-        if (!values.duration) {
-            errors.push("Duration is required.");
-        }
-
-        if (!values.persons) {
-            errors.push("Persons number is required.");
-        } else if (isNaN(values.persons) || values.persons.trim() === '') {
-            errors.push("Persons number is invalid.");
-        }
-
-        if (!values.price) {
-            errors.push("Price is required.");
-        } else if (isNaN(values.price) || values.price.trim() === '') {
-            errors.push("Price is invalid.");
-        }
-
-        if (!values.destinationId) {
-            errors.push("Destination is required.");
-        }
-
-        if (!values.imageUrl) {
-            errors.push("Image is required.");
-        }
-
-        if (!values.summary) {
-            errors.push("Summary is required.");
-        }
-
-        return errors;
-    }
 
     const { values, onChange, onSubmit } = useForm(addPackageHandler, {
         [PackageCreateFormKeys.Title]: '',

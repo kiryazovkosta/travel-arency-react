@@ -13,7 +13,6 @@ function NavbarSearch() {
 
     useEffect(() => {
         if (packages.length > 0) {
-            console.log(packages);
         }
     }, [packages]);
 

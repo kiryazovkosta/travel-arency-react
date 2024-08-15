@@ -34,10 +34,6 @@ export const search = async (value) => {
 
     const result = await httpClient.get(baseUrl);
     var packages = Object.values(result);
-    console.log(packages);
-    
     const filtered = packages.filter(p => p.title.includes(value));
-    console.log(filtered);
-
     return filtered;
 };

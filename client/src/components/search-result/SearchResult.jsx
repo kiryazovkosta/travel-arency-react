@@ -34,7 +34,7 @@ function SearchResult() {
             <div className="container">
                 <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 className="section-title bg-white text-center text-primary px-3">Search Result</h6>
-                    <h1 className="mb-5">Packages that match your requirement: <span className='search-pattern'>{pattern}</span></h1>
+                    <h1 className="mb-5">Packages that match</h1>
                 </div>
 
                 {chunkedPackages && chunkedPackages.length > 0 ? (
@@ -51,7 +51,7 @@ function SearchResult() {
                     ))
                 ) : (
                     <div>
-                        <h2 className='empty-search-result'>There are no packeges that match your search criteria</h2>
+                        <h2 className='empty-search-result'>There are no packeges that match your search criteria <span className='search-pattern'>{pattern}</span></h2>
                         <div className='packages-div'><Link to={Paths.packages} className='link-to-packages'>Our awesome packages</Link></div>
                     </div>
                 )}

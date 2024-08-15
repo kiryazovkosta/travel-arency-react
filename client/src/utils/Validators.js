@@ -87,3 +87,41 @@ export const validateCreateDestinationForm = (values) => {
 
     return errors;
 };
+
+export const validateCreatePackageForm = (values) => {
+    const errors = [];
+
+    if (!values.title) {
+         errors.push("Title is required.");
+    }
+
+    if (!values.duration) {
+        errors.push("Duration is required.");
+    }
+
+    if (!values.persons) {
+        errors.push("Persons number is required.");
+    } else if (isNaN(values.persons) || values.persons.trim() === '') {
+        errors.push("Persons number is invalid.");
+    }
+
+    if (!values.price) {
+        errors.push("Price is required.");
+    } else if (isNaN(values.price) || values.price.trim() === '') {
+        errors.push("Price is invalid.");
+    }
+
+    if (!values.destinationId) {
+        errors.push("Destination is required.");
+    }
+
+    if (!values.imageUrl) {
+        errors.push("Image is required.");
+    }
+
+    if (!values.summary) {
+        errors.push("Summary is required.");
+    }
+
+    return errors;
+}

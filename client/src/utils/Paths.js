@@ -20,6 +20,7 @@ export const Paths = {
     logout: '/logout',
     newsletter: '/newsletter',
     searchResult: '/search-result',
+    cloudinaryFileUpload: '/upload-image',
     profile: '/profile',
     other: '*'
 }

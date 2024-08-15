@@ -62,3 +62,28 @@ export const validateMessageForm = (values) => {
 
     return errors;
 };
+
+export const validateCreateDestinationForm = (values) => {
+    const { title, discount, imageUrl, summary } = values;
+    const errors = [];
+
+    if (!title) {
+        errors.push("Unused is required.");
+    }
+
+    if (!imageUrl) {
+        errors.push("Review is required.");
+    }
+
+    if (!summary) {
+        errors.push("Review is required.");
+    }
+
+    if (!discount) {
+        errors.push("Discount is required.");
+    } else if (isNaN(discount) || discount.trim() === '') {
+        errors.push("Discount is invalid.");
+    }
+
+    return errors;
+};

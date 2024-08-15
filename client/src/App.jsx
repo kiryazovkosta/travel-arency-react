@@ -32,6 +32,7 @@ import BookingList from './components/booking/booking-list/BookingList'
 import ContactList from './components/contact-list/ContactList'
 import Newsletter from './components/newsletter/Newsletter'
 import SearchResult from './components/search-result/SearchResult'
+import CloudinaryImagUpload from './components/image-upload/CloudinaryImagUpload'
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
             <Route path={Paths.bookings} element={<BookingList />} />
             <Route path={Paths.contacts} element={<ContactList />} />
             <Route path={Paths.newsletter} element={<Newsletter />} />
+            <Route path={Paths.cloudinaryFileUpload} element={<CloudinaryImagUpload />} />
             <Route path={Paths.destinationCreate} element={<DestinationCreate />} />
             <Route path={Paths.packageCreate} element={<PackageCreate />} />
           </Route>

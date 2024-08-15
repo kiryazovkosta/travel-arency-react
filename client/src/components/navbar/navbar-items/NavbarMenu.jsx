@@ -25,6 +25,7 @@ function NavbarMenu() {
                     <Link to={Paths.bookings} className="dropdown-item">Bookings</Link>
                     <Link to={Paths.contacts} className="dropdown-item">Messages</Link>
                     <Link to={Paths.newsletter} className="dropdown-item">Newsletter</Link>
+                    <Link to={Paths.cloudinaryFileUpload} className="dropdown-item">Upload image to Cloudinary</Link>
                     <Link to={Paths.destinationCreate} className="dropdown-item">Create destination</Link>
                     <Link to={Paths.packageCreate} className="dropdown-item">Create package</Link>
                 </div>

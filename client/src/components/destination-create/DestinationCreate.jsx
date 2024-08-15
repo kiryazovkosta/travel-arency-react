@@ -4,10 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useForm } from '../../hooks/useForm';
-
 import Spiner from "../../components/spinner/Spiner";
-
 import * as destinationService from '../../services/destinationService';
+import { validateCreateDestinationForm } from '../../utils/Validators';
+
 
 const DestinationCreateFormKeys = {
     Title: 'title',
@@ -23,7 +23,7 @@ function DestinationCreate() {
     const addDestinationHandler = async () => {
         setDisplaySpinner(true);
 
-        const errors = validateForm();
+        const errors = validateCreateDestinationForm(values);
         if (errors.length > 0) {
             errors.forEach(error => toast.error(error));
         } else {
@@ -31,7 +31,7 @@ function DestinationCreate() {
                 await destinationService.create(values);
                 clear(values);
                 toast.success('Destination is created successfully!')
-    
+
             } catch (err) {
                 console.log(err);
                 toast.error('The is an error with creation of destination!')
@@ -41,31 +41,6 @@ function DestinationCreate() {
         setDisplaySpinner(false);
     }
 
-    const validateForm = () => {
-        const { title, discount, imageUrl, summary } = values;
-        const errors = [];
-
-        if (!title) {
-             errors.push("Unused is required.");
-        }
-
-        if (!imageUrl) {
-            errors.push("Review is required.");
-        }
-
-        if (!summary) {
-            errors.push("Review is required.");
-        }
-
-        if (!discount) {
-            errors.push("Discount is required.");
-        } else if (isNaN(discount) || discount.trim() === '') {
-            errors.push("Discount is invalid.");
-        }
-
-        return errors;
-    };
-
     const clear = (values) => {
         values.title = '';
         values.discount = '';
@@ -73,14 +48,14 @@ function DestinationCreate() {
         values.summary = '';
     }
 
-    const { values, onChange, onSubmit} = useForm(addDestinationHandler, {
+    const { values, onChange, onSubmit } = useForm(addDestinationHandler, {
         [DestinationCreateFormKeys.Title]: '',
         [DestinationCreateFormKeys.Discount]: '',
         [DestinationCreateFormKeys.ImageUrl]: '',
         [DestinationCreateFormKeys.DataWowDelay]: '',
         [DestinationCreateFormKeys.Summary]: '',
     })
-    
+
     return (
 
         <div className="container-xxl py-5">

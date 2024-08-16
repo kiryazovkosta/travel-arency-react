@@ -10,8 +10,9 @@ export const validateRegistrationForm = (values) => {
         return "Passwords do not match.";
     }
     if (values.password.length < 5) {
-        return "Password must be at least 6 characters long.";
+        return "Password must be at least 5 characters long.";
     }
+    
     return null;
 };
 
@@ -20,7 +21,7 @@ export const validateLoginForm = (values) => {
         return "Email and password are required.";
     }
     if (values.password.length < 5) {
-        return "Password must be at least 6 characters long.";
+        return "Password must be at least 5 characters long.";
     }
     return null;
 };
@@ -68,15 +69,15 @@ export const validateCreateDestinationForm = (values) => {
     const errors = [];
 
     if (!title) {
-        errors.push("Unused is required.");
+        errors.push("Title is required.");
     }
 
     if (!imageUrl) {
-        errors.push("Review is required.");
+        errors.push("ImageUrl is required.");
     }
 
     if (!summary) {
-        errors.push("Review is required.");
+        errors.push("Summary is required.");
     }
 
     if (!discount) {

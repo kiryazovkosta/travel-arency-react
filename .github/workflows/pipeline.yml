@@ -32,7 +32,7 @@ jobs:
       working-directory: ./client
 
     - name: Run units tests
-      run: npm tests
+      run: npm test
       working-directory: ./client
   
   deploy-to-render-com:

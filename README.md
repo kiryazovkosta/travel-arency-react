@@ -32,6 +32,12 @@ To run the application you need to perform the following steps
 3. npm run dev
 ```
 
+To run te tests you need 
+```
+1. cd client
+2. npm test
+```
+
 ## Tools and Libraries
 
 This application uses the following technologies and libraries

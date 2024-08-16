@@ -59,7 +59,7 @@ function Login() {
                             <div className="col-md-12">
                                 <div className="form-floating">
                                     <input type="email" className="form-control" id={LoginFormKeys.Email} name={LoginFormKeys.Email} placeholder="Enter your email" onChange={onChange} value={values[LoginFormKeys.Email]} />
-                                    <label htmlFor={LoginFormKeys.Email}>Email</label>
+                                    <label htmlFor={LoginFormKeys.Email}>Email address</label>
                                 </div>
                             </div>
                             <div className="col-md-12">
@@ -70,7 +70,7 @@ function Login() {
                             </div>
 
                             <div className="col-12">
-                                <button className="btn btn-primary w-100 py-3" type="submit">Login</button>
+                                <button className="btn btn-primary w-100 py-3" type="submit" id="login-button">Login</button>
                             </div>
 
                             <div className="col-md-12">

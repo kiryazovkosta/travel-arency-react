@@ -1,6 +1,7 @@
 import * as httpClient from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/data/bookings';
+//const baseUrl = 'http://localhost:3030/data/bookings';
+const baseUrl = 'https://travel-agency-server-5epb.onrender.com/data/bookings';
 
 export const getAll = async () => {
     const query = new URLSearchParams({

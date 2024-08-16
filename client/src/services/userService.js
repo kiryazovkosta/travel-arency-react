@@ -1,7 +1,7 @@
 import * as httpClient from '../lib/request';
 
-//const baseUrl = 'http://localhost:3030/users';
-const baseUrl = 'https://travel-agency-server-5epb.onrender.com/users';
+const baseUrl = 'http://localhost:3030/users';
+//const baseUrl = 'https://travel-agency-server-5epb.onrender.com/users';
 
 export const login = async (email, password) => {
     const result = await httpClient.post(`${baseUrl}/login`, {

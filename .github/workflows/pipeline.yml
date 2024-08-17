@@ -35,18 +35,18 @@ jobs:
       run: npm test
       working-directory: ./client
   
-  # deploy-to-render-com:
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/main'
-  #   needs: build-and-test
-  #   steps:
-  #     - name: Checkout the code
-  #       uses: actions/checkout@v4
+  deploy-to-render-com:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: build-and-test
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
         
-  #     - name: Deploy to render.com
-  #       uses: JorgeLNJunior/render-deploy@v1.4.4
-  #       with:
-  #         service_id:  ${{ secrets.UI_API_KEY }}
-  #         api_key: ${{ secrets.RENDER_KEY }} 
-  #         clear_cache: true
-  #         wait_deploy: true 
+      - name: Deploy to render.com
+        uses: JorgeLNJunior/render-deploy@v1.4.4
+        with:
+          service_id:  ${{ secrets.UI_API_KEY }}
+          api_key: ${{ secrets.RENDER_KEY }} 
+          clear_cache: true
+          wait_deploy: true 

@@ -36,7 +36,7 @@ function DestinationList() {
                     <h1 className="mb-5">Popular Destination</h1>
                 </div>
                 {chunkedDestinations.map((chunk, chunkIndex) => (
-                    <div className="row g-3" key={chunkIndex}>
+                    <div className="row g-3 padding-from-top-10px" key={chunkIndex}>
                         <div className="col-lg-7 col-md-6">
                             <div className="row g-3">
                                 {chunk.slice(0, 3).map((destination, index) => (

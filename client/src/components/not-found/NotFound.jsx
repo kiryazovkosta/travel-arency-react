@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+
+import { Paths } from '../../utils/Paths'
+
 function NotFound() {
     return (
         <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -8,7 +12,7 @@ function NotFound() {
                         <h1 className="display-1">404</h1>
                         <h1 className="mb-4">Page Not Found</h1>
                         <p className="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                        <a className="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>
+                        <Link className="btn btn-primary rounded-pill py-3 px-5" to={Paths.home}>Go Back To Home</Link>
                     </div>
                 </div>
             </div>

@@ -75,27 +75,27 @@ function DestinationCreate() {
                             <div className="col-md-6">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id={DestinationCreateFormKeys.Title} name={DestinationCreateFormKeys.Title} placeholder="Package title" onChange={onChange} value={values[DestinationCreateFormKeys.Title]} />
-                                    <label htmlFor={DestinationCreateFormKeys.Title}>Package title</label>
+                                    <label htmlFor={DestinationCreateFormKeys.Title}>Destination title</label>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-floating">
                                     <input type="number" className="form-control" id={DestinationCreateFormKeys.Discount} name={DestinationCreateFormKeys.Discount} placeholder="Destination discount" onChange={onChange} value={values[DestinationCreateFormKeys.Discount]} />
-                                    <label htmlFor={DestinationCreateFormKeys.Discount}>Package price</label>
+                                    <label htmlFor={DestinationCreateFormKeys.Discount}>Destination discount</label>
                                 </div>
                             </div>
 
                             <div className="col-md-12">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id={DestinationCreateFormKeys.ImageUrl} name={DestinationCreateFormKeys.ImageUrl} placeholder="Package image" onChange={onChange} value={values[DestinationCreateFormKeys.ImageUrl]} />
-                                    <label htmlFor={DestinationCreateFormKeys.ImageUrl}>Package image</label>
+                                    <label htmlFor={DestinationCreateFormKeys.ImageUrl}>Destination image</label>
                                 </div>
                             </div>
 
                             <div className="col-12">
                                 <div className="form-floating">
                                     <textarea className="form-control height100" placeholder="Enter a summary" id={DestinationCreateFormKeys.Summary} name={DestinationCreateFormKeys.Summary} onChange={onChange} value={values[DestinationCreateFormKeys.Summary]}></textarea>
-                                    <label htmlFor={DestinationCreateFormKeys.Summary}>Summary</label>
+                                    <label htmlFor={DestinationCreateFormKeys.Summary}>Summary for destination</label>
                                 </div>
                             </div>
 

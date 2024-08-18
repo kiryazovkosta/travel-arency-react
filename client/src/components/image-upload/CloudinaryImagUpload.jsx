@@ -20,9 +20,10 @@ function CloudinaryImagUpload() {
             return;
         }
 
+        const preset = import.meta.env.VITE_API_CLODINARY_PERSEST;
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('upload_preset', 'oqnatpgc');
+        formData.append('upload_preset', preset);
 
         try {
             const secure_url = await cloudinaryService.create(formData);

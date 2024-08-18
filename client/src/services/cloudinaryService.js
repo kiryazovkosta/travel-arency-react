@@ -2,7 +2,7 @@ import * as httpClient from '../lib/request';
 
 export const create = async (formData) => {
     const response = await fetch(
-        `https://api.cloudinary.com/v1_1/dfn7thtsx/image/upload`,
+        import.meta.env.VITE_API_CLODINARY_CLOUD,
         {
             method: 'POST',
             body: formData,

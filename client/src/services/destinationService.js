@@ -1,7 +1,7 @@
 import * as httpClient from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/data/destinations';
-//const baseUrl = 'https://travel-agency-server-5epb.onrender.com/data/destinations';
+//const baseUrl = 'http://localhost:3030/data/destinations';
+const baseUrl = 'https://travel-agency-server-5epb.onrender.com/data/destinations';
 
 export const getAll = async () => {
     const packages = await httpClient.get(baseUrl);

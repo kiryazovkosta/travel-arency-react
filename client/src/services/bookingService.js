@@ -1,8 +1,6 @@
 import * as httpClient from '../lib/request';
 
-const url = import.meta.env.VITE_API_ENDPOINT_BASE_URL;
-const baseUrl = `${url}data/bookings`;
-//const baseUrl = 'https://travel-agency-server-5epb.onrender.com/data/bookings';
+const baseUrl = 'https://travel-agency-server-5epb.onrender.com/data/bookings';
 
 export const getAll = async () => {
     const query = new URLSearchParams({

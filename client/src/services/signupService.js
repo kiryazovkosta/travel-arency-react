@@ -1,7 +1,7 @@
 import * as httpClient from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/jsonstore/signup';
-//const baseUrl = 'https://travel-agency-server-5epb.onrender.com/jsonstore/signup';
+//const baseUrl = 'http://localhost:3030/jsonstore/signup';
+const baseUrl = 'https://travel-agency-server-5epb.onrender.com/jsonstore/signup';
 
 export const getAll = async () => {
     const result = await httpClient.get(baseUrl);

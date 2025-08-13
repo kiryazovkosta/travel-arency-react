@@ -14,6 +14,16 @@
 
 This is a React application for course project in a module "ReactJS - June 2024". My username int oSoftuni's system is kkiryazov
 
+## Deployment
+
+Demo of application is deployed at [Travel Agency](https://travel-arency-react.onrender.com)
+
+## Some screenshots
+
+1. Home page
+![Description](screenshots/home.png)
+
+
 ## Run
 
 You need to have Node.js installed to run and use this system

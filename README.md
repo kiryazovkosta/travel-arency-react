@@ -16,7 +16,8 @@ This is a React application for course project in a module "ReactJS - June 2024"
 
 ## Deployment
 
-Demo of application is deployed at <a href="https://travel-arency-react.onrender.com" target="_blank" rel="noopener">Travel Agency</a>
+Demo of application is deployed at [Travel Agency](https://travel-arency-react.onrender.com) 
+https://travel-arency-react.onrender.com/
 
 ## Some screenshots
 

@@ -21,8 +21,31 @@ Demo of application is deployed at [Travel Agency](https://travel-arency-react.o
 ## Some screenshots
 
 1. Home page
-![Description](screenshots/home.png)
+![Home](screenshots/home.png)
 
+2. Register page
+![Register](screenshots/register.png)
+
+3. Login page
+![Login](screenshots/login.png)
+
+4. Services page
+![Services](screenshots/services.png)
+
+5. Packages page
+![Packages](screenshots/packages.png)
+
+6. Package-Details page
+![Package Details](screenshots/package-details.png)
+
+7. Booking page
+![Booking](screenshots/booking.png)
+
+8. Destinations page
+![Destinations](screenshots/destinations.png)
+
+9. Contact page
+![Contact](screenshots/contact.png)
 
 ## Run
 
